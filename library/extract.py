@@ -23,25 +23,28 @@ def seconds_to_hmsm(seconds):
 
 
 def main(video_path, srt_path):
-    if os.path.exists(srt_path):       #if srt file exists, skip
+    if os.path.exists(srt_path):  # if srt file exists, skip
         time.sleep(0.01)
         return
-    model = whisper.load_model('medium.en')  #whisper model choice
+    model = whisper.load_model('medium.en')  # whisper model choice
     start_time = datetime.datetime.now()
-    print('正在识别：{} --{}'.format('\\'.join(video_path.split('\\')[2:]), start_time.strftime('%Y-%m-%d %H:%M:%S')))
+    print('正在识别：{} --{}'.format('\\'.join(video_path.split('\\')[2:]),
+                                start_time.strftime('%Y-%m-%d %H:%M:%S')))
     video = imageio.get_reader(video_path)
     duration = seconds_to_hmsm(video.get_meta_data()['duration'])
     video.close()
     print('视频时长：{}'.format(duration))
-    res = model.transcribe(video_path, fp16=False, language='English') #language and gpu choice
+    res = model.transcribe(video_path, fp16=False, language='English')
     with open(srt_path, 'w', encoding='utf-8') as f:
         i = 1
         for r in res['segments']:
             f.write(str(i) + '\n')
-            f.write(seconds_to_hmsm(float(r['start'])) + ' --> ' + seconds_to_hmsm(float(r['end'])) + '\n')
-            f.write(r['text'].strip() + '\n') 
+            f.write(seconds_to_hmsm(float(r['start'])) + ' --> ' +
+                    seconds_to_hmsm(float(r['end'])) + '\n')
+            f.write(r['text'].strip() + '\n')
             f.write('\n')
             i += 1
     end_time = datetime.datetime.now()
-    print('完成识别：{} --{}'.format('\\'.join(video_path.split('\\')[2:]), end_time.strftime('%Y-%m-%d %H:%M:%S')))
+    print('完成识别：{} --{}'.format('\\'.join(video_path.split('\\')[2:]),
+                                end_time.strftime('%Y-%m-%d %H:%M:%S')))
     print('花费时间:', end_time - start_time)

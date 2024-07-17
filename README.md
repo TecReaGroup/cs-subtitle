@@ -2,6 +2,10 @@
 
 简体中文 | [English](README_en.md)
 
+已经翻译的系列视频上传于 [Bilibili](https://space.bilibili.com/3546392142285480?spm_id_from=333.1007.0.0), srt 文件已经同步于 `Github` 仓库, 如有错误, 可以提 issue
+
+更多想要翻译的系列, 可以提 issue, 需要提供视频地址以及简要概括其内容和特点
+
 ## 前言
 
 ### 介绍
