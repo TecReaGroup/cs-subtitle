@@ -2,21 +2,156 @@ import itertools
 import os
 import re
 import time
+last_time = time.time()
 
 
-def tanslate(prompt, api, wait_time=0):
-    time.sleep(wait_time)
-
+def tanslate(prompt, api):
     import google.generativeai as genai
+    global last_time
+    if time.time() - last_time < 4:
+        time.sleep(4 - (time.time() - last_time))
+
     genai.configure(api_key=api)
     model = genai.GenerativeModel(model_name="gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text
 
 
-def is_time_format(s):
-    pattern = r"\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}"
-    return bool(re.match(pattern, s))
+def srt_format(file_path):
+    # 定义正则表达式匹配SRT字幕格式
+    pattern = re.compile(r'(\d+)\s+(\d{2}:\d{2}:\d{2},\d{3}) --> (\d{2}:\d{2}:\d{2},\d{3})\s+(.+?)\s*(?=\d+\s+\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}|$)', re.DOTALL)
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+
+    matches = pattern.findall(content)
+    normalized_subtitles = []
+
+    for match in matches:
+        index, start_time, end_time, text = match
+        # 分割英文和中文部分
+        lines = text.strip().split('\n')
+        if len(lines) >= 2:
+            english_text = lines[0].strip()
+            chinese_text = lines[1].strip()
+        else:
+            # 如果没有中文翻译，保留原文本
+            english_text = text.strip()
+            chinese_text = ""
+
+        # 构建规范化字幕格式
+        normalized_subtitles.append(f"{index}\n{start_time} --> {end_time}\n{english_text}\n{chinese_text}\n")
+
+    # 将规范化字幕写回文件
+    normalized_content = '\n'.join(normalized_subtitles)
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(normalized_content)
+
+
+def find_missing_subtitle_range(file_path, srt_number):
+    # 定义正则表达式匹配SRT字幕格式
+    pattern = re.compile(r'(\d+)\s+(\d{2}:\d{2}:\d{2},\d{3}) --> (\d{2}:\d{2}:\d{2},\d{3})')
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+
+    matches = pattern.findall(content)
+    existing_indices = []
+
+    for match in matches:
+        index, start_time, end_time = match
+        existing_indices.append(int(index))
+
+    existing_indices.sort()
+
+    # 找到缺失的第一段字幕序号
+    missing_start_index = None
+    missing_end_index = None
+    for i in range(1, srt_number + 1):
+        if i not in existing_indices:
+            if missing_start_index is None:
+                missing_start_index = i
+            missing_end_index = i
+
+    if missing_start_index is not None and missing_end_index is not None:
+        return [missing_start_index, missing_end_index + 1]
+
+    return [None, None]
+
+
+def read_lines_range(file_path, start_num, end_num):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        missing_txt = ""
+        for i in range(1, end_num):
+            next_four_lines = list(itertools.islice(file, 4))
+            if i > start_num:
+                for line in next_four_lines:
+                    missing_txt += line
+    return missing_txt
+
+
+def retranslate(srt_path, srt_translated_path, api, prompt_ask, srt_number):
+    with open(srt_translated_path, 'r+', encoding='utf-8') as file:
+        missing_subtitle = find_missing_subtitle_range(srt_translated_path,
+                                                       srt_number)
+        if missing_subtitle[0] is not None:
+            srt_tanslate = file.readlines()
+            missing_txt = read_lines_range(srt_path, missing_subtitle[0],
+                                           missing_subtitle[1])
+            prompt = prompt_ask + "\n" + missing_txt
+            print(prompt + "\n" + "<< retanslating")
+
+            respond = tanslate(prompt, api)
+            with open('temp.srt', 'a+', encoding='utf-8') as file:
+                file.write(respond+'\n\n')
+                srt_format('temp.srt')
+                respond_format = file.readlines()
+            os.remove('temp.srt')
+            srt_tanslate.insert(missing_subtitle[0]*5, respond_format)
+            with open(srt_translated_path, 'w', encoding='utf-8') as file:
+                file.writelines([str(line) for line in srt_tanslate])
+            return 1
+        else:
+            return 0
+
+
+def main(srt_path, srt_translated_path, api, prompt_path, srt_number):
+    with open(prompt_path, 'r', encoding='utf-8') as file_prompt:
+        prompt_ask = file_prompt.read()
+
+    with open(srt_path, 'r', encoding='utf-8') as file1, \
+         open(srt_translated_path, 'a+', encoding='utf-8') as file2:
+        file2.seek(0)
+        srt_translated = file2.readlines()
+        file2.seek(0, os.SEEK_END)
+        last_position = len(srt_translated)//5
+
+        # 跳过已翻译的字幕块
+        for _ in itertools.islice(file1, last_position * 4):
+            pass
+
+        flag = True
+        srt_split = ""
+        while flag:
+            for i in range(50):  # 每次读取的最大字幕行数
+                next_four_lines = list(itertools.islice(file1, 4))
+                if not next_four_lines:
+                    flag = False
+                    break
+                for line in next_four_lines:
+                    srt_split += line
+                if len(srt_split) > 4000:  # 每次输入的最大字幕字数长度
+                    break
+            prompt = prompt_ask + "\n" + srt_split
+            print(prompt + "\n" + "<< translating")
+            respond = tanslate(prompt, api)
+            file2.write(respond + "\n")
+            srt_split = ""
+        srt_format(srt_translated_path)
+
+    while retranslate(srt_path, srt_translated_path,
+                      api, prompt_ask, srt_number):
+        pass
 
 
 '''  openai api
@@ -42,121 +177,3 @@ def chatgpt_tanslate(prompt, chatgpt_api, wait_need=1):
     )
     return completion.choices[0].message.content
 '''
-
-
-def srt_format(srt_path):
-    formatted_lines = []
-    with open(srt_path, 'r', encoding='utf-8') as file:
-        lines = file.readlines()
-        for i in range(len(lines)):
-            if i > len(lines)-4:
-                break
-            line = lines[i].split('\n')[0]
-            if line.isdigit():  # 判断字幕时间格式
-                flag_jump = False
-                if not is_time_format(lines[i+1].split('\n')[0]):
-                    flag_jump = True
-                for j in range(2, 4):
-                    if lines[i+j].split('\n')[0] == '\n' or \
-                       is_time_format(lines[i+j].split('\n')[0]):
-                        flag_jump = True
-                if flag_jump:
-                    continue
-                for j in range(4):
-                    formatted_lines.append(lines[i+j].strip() + '\n')
-                formatted_lines.append('\n')
-    with open(srt_path, 'w', encoding='utf-8') as file:
-        for line in formatted_lines:
-            file.write(line)
-
-
-def read_lines_range(file_path, start_num, end_num):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        missing_txt = ""
-        for i in range(1, end_num):
-            next_four_lines = list(itertools.islice(file, 4))
-            if i > start_num:
-                for line in next_four_lines:
-                    missing_txt += line
-    return missing_txt
-
-
-def retranslate(srt_path, srt_translated_path, api, prompt_ask, srt_number):
-    with open(srt_translated_path, 'r+', encoding='utf-8') as file:
-        srt_tanslate = file.readlines()
-        falg_change = False
-        i = 0
-        while i+5 < len(srt_tanslate) or i+5 < srt_number*5:
-            if i+5 == len(srt_tanslate):  # 字幕末尾遗漏翻译
-                j = int(srt_tanslate[i].split('\n')[0])
-                k = srt_number + 1
-            else:  # 字幕中间遗漏翻译
-                j = int(srt_tanslate[i].split('\n')[0])
-                k = int(srt_tanslate[i+5].split('\n')[0])
-            if j+1 != k:
-                retanslate_number = k - j - 1
-                if retanslate_number <= 3 and k+3 <= srt_number+1:
-                    k += 3
-                missing_txt = read_lines_range(srt_path, j, k)
-                prompt = prompt_ask + missing_txt
-                print(prompt + "\n" + "<< retanslating")
-                respond = tanslate(prompt, api)
-                with open('temp.srt', 'w', encoding='utf-8') as file:
-                    file.write(respond+'\n\n')
-                    srt_format('temp.srt')
-                with open('temp.srt', 'r', encoding='utf-8') as file:
-                    respond_format = file.readlines()
-                os.remove('temp.srt')
-                lp = i+5
-                for m in range(retanslate_number):
-                    if m*5 + 4 >= len(respond_format):
-                        break
-                    for n in range(5):
-                        srt_tanslate.insert(lp, respond_format[m*5+n])
-                        lp += 1
-                falg_change = True
-            i += 5
-    if falg_change:
-        with open(srt_translated_path, 'w', encoding='utf-8') as file:
-            file.writelines(srt_tanslate)
-
-
-def main(srt_path, srt_translated_path, api, prompt_path, srt_number):
-    if os.path.exists(srt_translated_path):
-        print(f"{srt_path} has been subtitled.")
-        return 0
-    else:
-        os.makedirs(os.path.dirname(srt_translated_path), exist_ok=True)
-
-    with open(srt_path, 'r', encoding='utf-8') as file1, \
-         open(srt_translated_path, 'w', encoding='utf-8') as file2, \
-         open(prompt_path, 'r', encoding='utf-8') as file3:
-        flag = True
-        srt_split = ""
-        prompt_ask = file3.read()
-        while flag:
-            for i in range(100):  # 每次读取的最大字幕行数
-                next_four_lines = list(itertools.islice(file1, 4))
-                if not next_four_lines:
-                    flag = False
-                    break
-                for line in next_four_lines:
-                    srt_split += line
-                if len(srt_split) > 5000:  # 每次输入的最大字幕字数长度
-                    break
-            prompt = prompt_ask + srt_split
-            print(prompt + "\n" + "<< translating")
-            respond = tanslate(prompt, api, 0)
-            file2.write(respond + "\n\n")
-            srt_split = ""
-    srt_format(srt_translated_path)
-    retranslate(srt_path, srt_translated_path, api, prompt_ask, srt_number)
-    srt_format(srt_translated_path)
-
-    # 检验翻译是否完整
-    with open(srt_translated_path, 'r', encoding='utf-8') as file:
-        srt_tanslate = file.readlines()
-        if len(srt_tanslate)//5 == srt_number:
-            print("翻译完整")
-        else:
-            print("翻译不完整")
