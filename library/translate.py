@@ -19,7 +19,7 @@ def tanslate(prompt, api):
 
 def srt_format(file_path):
     # 定义正则表达式匹配SRT字幕格式
-    pattern = re.compile(r'(\d+)\s+(\d{2}:\d{2}:\d{2},\d{3}) --> (\d{2}:\d{2}:\d{2},\d{3})\s+(.+?)\s*(?=\d+\s+\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}|$)', re.DOTALL)
+    pattern = re.compile(r'(\d+)\s*\n(\d{2}:\d{2}:\d{2},\d{3}) --> (\d{2}:\d{2}:\d{2},\d{3})\s+(.+?)\s*(?=\d+\s*\n\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}|$)', re.DOTALL)
 
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
@@ -72,9 +72,12 @@ def find_missing_subtitle_range(file_path, srt_number):
             if missing_start_index is None:
                 missing_start_index = i
             missing_end_index = i
+        else:
+            if missing_start_index is not None:
+                break
 
     if missing_start_index is not None and missing_end_index is not None:
-        return [missing_start_index, missing_end_index + 1]
+        return [missing_start_index, missing_end_index]
 
     return [None, None]
 
@@ -82,9 +85,9 @@ def find_missing_subtitle_range(file_path, srt_number):
 def read_lines_range(file_path, start_num, end_num):
     with open(file_path, 'r', encoding='utf-8') as file:
         missing_txt = ""
-        for i in range(1, end_num):
+        for i in range(1, end_num + 1):
             next_four_lines = list(itertools.islice(file, 4))
-            if i > start_num:
+            if i >= start_num:
                 for line in next_four_lines:
                     missing_txt += line
     return missing_txt
@@ -102,10 +105,11 @@ def retranslate(srt_path, srt_translated_path, api, prompt_ask, srt_number):
             print(prompt + "\n" + "<< retanslating")
 
             respond = tanslate(prompt, api)
-            with open('temp.srt', 'a+', encoding='utf-8') as file:
-                file.write(respond+'\n\n')
+            with open('temp.srt', 'a+', encoding='utf-8') as file1:
+                file1.write(respond+'\n\n')
+                file1.seek(0)
                 srt_format('temp.srt')
-                respond_format = file.readlines()
+                respond_format = file1.read()
             os.remove('temp.srt')
             srt_tanslate.insert(missing_subtitle[0]*5, respond_format)
             with open(srt_translated_path, 'w', encoding='utf-8') as file:
@@ -124,13 +128,18 @@ def main(srt_path, srt_translated_path, api, prompt_path, srt_number):
         file2.seek(0)
         srt_translated = file2.readlines()
         file2.seek(0, os.SEEK_END)
-        last_position = len(srt_translated)//5
+        # 获取已经翻译的最后一条字幕序号
+        last_position = 0
+        for line in reversed(srt_translated):
+            if line.strip().isdigit():
+                last_position = int(line.strip())
+                break
 
         # 跳过已翻译的字幕块
         for _ in itertools.islice(file1, last_position * 4):
             pass
 
-        flag = True
+        flag = find_missing_subtitle_range(srt_translated_path, srt_number)[0]
         srt_split = ""
         while flag:
             for i in range(50):  # 每次读取的最大字幕行数
@@ -142,13 +151,16 @@ def main(srt_path, srt_translated_path, api, prompt_path, srt_number):
                     srt_split += line
                 if len(srt_split) > 4000:  # 每次输入的最大字幕字数长度
                     break
+            if srt_split == "":
+                continue
             prompt = prompt_ask + "\n" + srt_split
             print(prompt + "\n" + "<< translating")
             respond = tanslate(prompt, api)
             file2.write(respond + "\n")
             srt_split = ""
-        srt_format(srt_translated_path)
+            srt_format(srt_translated_path)
 
+    srt_format(srt_translated_path)
     while retranslate(srt_path, srt_translated_path,
                       api, prompt_ask, srt_number):
         pass

@@ -1,0 +1,5864 @@
+1
+00:00:00,000 --> 00:00:03,486
+[MUSIC PLAYING]
+[音乐播放]
+
+2
+00:01:07,345 --> 00:01:10,960
+TOM CRUISE: I'm going to show you some magic.
+汤姆·克鲁斯：我要展示给你一些魔法。
+
+3
+00:01:10,960 --> 00:01:12,250
+It's the real thing.
+这是真的。
+
+4
+00:01:12,250 --> 00:01:14,420
+[LAUGHTER]
+[笑声]
+
+5
+00:01:14,420 --> 00:01:24,340
+I mean, it's all the real thing.
+我的意思是，这一切都是真的。
+
+6
+00:01:24,340 --> 00:01:26,270
+[LAUGHTER]
+[笑声]
+
+7
+00:01:26,270 --> 00:01:27,410
+DAVID J. MALAN: All right.
+大卫·马兰：好的。
+
+8
+00:01:27,410 --> 00:01:30,950
+This is CS50, Harvard University's Introduction
+这是CS50，哈佛大学的计算机科学导论
+
+9
+00:01:30,950 --> 00:01:33,140
+to the Intellectual Enterprises of Computer Science
+以及编程的艺术。
+
+10
+00:01:33,140 --> 00:01:34,430
+and the Art of Programming.
+我的名字是大卫·马兰，这是我们面向家庭的
+
+11
+00:01:34,430 --> 00:01:37,760
+My name is David Malan, and this is our family-friendly introduction
+人工智能或AI的介绍，现在人工智能似乎无处不在。
+
+12
+00:01:37,760 --> 00:01:41,780
+to artificial intelligence or AI, which seems to be everywhere these days.
+但首先，谈谈这些橡胶鸭子，你的学生
+
+13
+00:01:41,780 --> 00:01:45,140
+But first, a word on these rubber ducks, which your students
+可能已经使用了一段时间了。
+
+14
+00:01:45,140 --> 00:01:46,487
+might have had for some time.
+在计算机科学的世界，尤其是编程领域，
+
+15
+00:01:46,487 --> 00:01:49,320
+Within the world of computer science, and programming in particular,
+有一个关于“橡皮鸭调试”或“橡皮鸭法”的概念——
+
+16
+00:01:49,320 --> 00:01:52,145
+there's this notion of rubber duck debugging or rubber ducking--
+——当没有同事、朋友、家人、教学助理来回答你关于代码的问题时，
+
+17
+00:01:52,145 --> 00:01:57,080
+--whereby in the absence of a colleague, a friend, a family member, a teaching
+尤其是在代码无法正常工作的情况下，理想情况下，你
+
+18
+00:01:57,080 --> 00:02:00,120
+fellow who might be able to answer your questions about your code,
+至少应该有一只橡皮鸭，或者任何无生命的
+
+19
+00:02:00,120 --> 00:02:02,210
+especially when it's not working, ideally you
+物体放在你的桌子上，可以跟它说话。
+
+20
+00:02:02,210 --> 00:02:04,940
+might have at least a rubber duck or really any inanimate
+关键是，在表达你的逻辑、讲出你的问题时，
+
+21
+00:02:04,940 --> 00:02:07,550
+object on your desk with whom to talk.
+即使鸭子没有真正回应，
+
+22
+00:02:07,550 --> 00:02:11,243
+And the idea is, that in expressing your logic, talking through your problems,
+最终你会听到你的想法中的不合逻辑之处，
+
+23
+00:02:11,243 --> 00:02:13,160
+even though the duck doesn't actually respond,
+然后“灵光一现”。
+
+24
+00:02:13,160 --> 00:02:16,250
+invariably, you hear eventually the illogic in your thoughts
+现在，对于在线学习了一段时间的学生来说，CS50
+
+25
+00:02:16,250 --> 00:02:18,110
+and the proverbial light bulb goes off.
+已经有了数字化的版本，因此
+
+26
+00:02:18,110 --> 00:02:20,900
+Now, for students online for some time, CS50
+在CS50学生使用的编程环境中，
+
+27
+00:02:20,900 --> 00:02:23,370
+has had a digital version thereof, whereby
+在过去的几年里，如果他们没有橡皮鸭放在桌子上，
+
+28
+00:02:23,370 --> 00:02:25,945
+in the programming environment that CS50 students use,
+他们可以调出这个界面。
+
+29
+00:02:25,945 --> 00:02:29,070
+for the past several years, if they don't have a rubber duck on their desk,
+如果他们开始对话，比如“我希望你能帮助我解决一些问题”，直到最近，
+
+30
+00:02:29,070 --> 00:02:30,790
+they can pull up this interface here.
+CS50的虚拟橡皮鸭只会嘎嘎叫一、两、三声。
+
+31
+00:02:30,790 --> 00:02:32,850
+And if they begin a conversation like, I'm
+但我们有轶事证据表明，仅此一项
+
+32
+00:02:32,850 --> 00:02:35,850
+hoping you can help me solve some problem, up until recently,
+就足以让学生意识到自己做错了什么。
+
+33
+00:02:35,850 --> 00:02:39,640
+CS50's virtual rubber duck would simply quack once, twice,
+当然，最近，这只鸭子，以及世界上许多其他鸭子，
+
+34
+00:02:39,640 --> 00:02:41,010
+or three times in total.
+可以说，真的活了过来。
+
+35
+00:02:41,010 --> 00:02:43,380
+But we have anecdotal evidence that alone
+你的学生已经在CS50中以某种形式使用人工智能作为虚拟助教了。
+
+36
+00:02:43,380 --> 00:02:47,010
+was enough to get students to realize what it is they were doing wrong.
+我们今天要做的，不仅要揭示我们在CS50中使用和利用人工智能的方式，
+
+37
+00:02:47,010 --> 00:02:51,090
+But of course, more recently has this duck and so many other ducks,
+还要揭示人工智能本身的工作原理，以便更好地为未来做好准备。
+
+38
+00:02:51,090 --> 00:02:53,340
+so to speak, around the world, come to life really.
+因此，去年这个时候，像DALL-E 2和图像生成一样
+
+39
+00:02:53,340 --> 00:02:56,310
+And your students have been using artificial intelligence
+都风靡一时。
+
+40
+00:02:56,310 --> 00:03:00,090
+in some form within CS50 as a virtual teaching assistant.
+你可能玩过这个，你可以输入一些关键词，然后砰，
+
+41
+00:03:00,090 --> 00:03:02,130
+And what we'll do today, is reveal not only
+你就得到了一个动态生成的图像。
+
+42
+00:03:02,130 --> 00:03:05,370
+how we've been using and leveraging AI within CS50,
+类似的工具还有Midjourney，它可以让你获得更逼真的3D
+
+43
+00:03:05,370 --> 00:03:10,530
+but also how AI itself works, and to prepare you better for the years ahead.
+图像。
+
+44
+00:03:10,530 --> 00:03:14,910
+So last year around this time, like DALL-E 2 and image generation
+这就是我们今天要讲的内容。
+
+45
+00:03:14,910 --> 00:03:15,870
+were all of the rage.
+[音乐播放]
+
+46
+00:03:15,870 --> 00:03:18,600
+You might have played with this, whereby you can type in some keywords and boom,
+[音乐播放]
+
+47
+00:03:18,600 --> 00:03:20,640
+you have a dynamically generated image.
+[音乐播放]
+
+48
+00:03:20,640 --> 00:03:24,240
+Similar tools are like Midjourney, which gives you even more realistic 3D
+[音乐播放]
+
+49
+00:03:24,240 --> 00:03:24,960
+imagery.
+图像。
+
+50
+00:03:24,960 --> 00:03:27,840
+And within that world of image generation,
+而在图像生成的世界里，
+
+51
+00:03:27,840 --> 00:03:32,370
+there were nonetheless some tells, like an observant viewer could tell
+尽管如此，还是有一些迹象，就像一个细心的观察者可以分辨出
+
+52
+00:03:32,370 --> 00:03:34,768
+that this was probably generated by AI.
+这很可能是由人工智能生成的。
+
+53
+00:03:34,768 --> 00:03:36,810
+And in fact, a few months ago, The New York Times
+事实上，几个月前，《纽约时报》
+
+54
+00:03:36,810 --> 00:03:38,470
+took a look at some of these tools.
+对其中一些工具进行了研究。
+
+55
+00:03:38,470 --> 00:03:41,550
+And so, for instance, here is a sequence of images
+例如，这里有一系列图像
+
+56
+00:03:41,550 --> 00:03:44,350
+that at least at left, isn't all that implausible that this
+至少在左边，这并不是完全不可信的
+
+57
+00:03:44,350 --> 00:03:45,600
+might be an actual photograph.
+可能是一张真正的照片。
+
+58
+00:03:45,600 --> 00:03:48,000
+But in fact, all three of these are AI-generated.
+但事实上，这三张都是由人工智能生成的。
+
+59
+00:03:48,000 --> 00:03:50,910
+And for some time, there was a certain tell.
+有一段时间，存在一个特定的线索。
+
+60
+00:03:50,910 --> 00:03:54,600
+Like AI up until recently, really wasn't really good at the finer details,
+就像人工智能直到最近，在更精细的细节方面真的不太好，
+
+61
+00:03:54,600 --> 00:03:57,120
+like the fingers are not quite right.
+比如手指就不太对。
+
+62
+00:03:57,120 --> 00:03:58,950
+And so you could have that sort of hint.
+所以你可以有那种提示。
+
+63
+00:03:58,950 --> 00:04:01,470
+But I dare say, AI is getting even better and better,
+但我敢说，人工智能正在变得越来越好，
+
+64
+00:04:01,470 --> 00:04:04,420
+such that it's getting harder to discern these kinds of things.
+以至于越来越难以辨别这些东西。
+
+65
+00:04:04,420 --> 00:04:06,930
+So if you haven't already, go ahead and take out your phone
+所以，如果你还没有，那就拿出你的手机
+
+66
+00:04:06,930 --> 00:04:08,190
+if you have one with you.
+如果你有的话。
+
+67
+00:04:08,190 --> 00:04:11,680
+And if you'd like to partake, scan this barcode here,
+如果你想参与，扫描这里这个条形码，
+
+68
+00:04:11,680 --> 00:04:13,830
+which will lead you to a URL.
+它会把你带到一个网址。
+
+69
+00:04:13,830 --> 00:04:17,339
+And on your screen, you'll have an opportunity in a moment to buzz in.
+一会儿，你的屏幕上会有一个机会让你参与进来。
+
+70
+00:04:17,339 --> 00:04:20,310
+If my colleague, Rongxin, wouldn't mind joining me up here on stage.
+如果我的同事容昕不介意和我一起上台。
+
+71
+00:04:20,310 --> 00:04:22,560
+We'll ask you a sequence of questions and see just how
+我们会问你一系列问题，看看你到底
+
+72
+00:04:22,560 --> 00:04:25,480
+prepared you are for this coming world of AI.
+准备好迎接这个即将到来的 AI 世界。
+
+73
+00:04:25,480 --> 00:04:27,823
+So for instance, once you've got this here,
+所以，例如，一旦你有了这个，
+
+74
+00:04:27,823 --> 00:04:29,490
+code scanned, if you don't, that's fine.
+代码扫描完毕，如果没有，那就没关系。
+
+75
+00:04:29,490 --> 00:04:32,880
+You can play along at home or alongside the person next to you.
+你可以在家里玩，或者和你旁边的人一起玩。
+
+76
+00:04:32,880 --> 00:04:34,920
+Here are two images.
+这里有两张图片。
+
+77
+00:04:34,920 --> 00:04:38,400
+And my question for you is, which of these two images, left
+我的问题是，这两张图片中的哪一张，左边
+
+78
+00:04:38,400 --> 00:04:42,610
+or right, was generated by AI?
+还是右边，是由人工智能生成的？
+
+79
+00:04:42,610 --> 00:04:49,740
+Which of these two was generated by AI, left or right?
+这两张图片中哪一张是由人工智能生成的，左边还是右边？
+
+80
+00:04:49,740 --> 00:04:51,780
+And I think Rongxin, we can flip over and see
+我想，容昕，我们可以翻过去看看
+
+81
+00:04:51,780 --> 00:04:53,970
+as the responses start to come in.
+随着回复的到来。
+
+82
+00:04:53,970 --> 00:04:58,740
+So far, we're about 20% saying left, 70 plus percent saying right.
+到目前为止，大约 20% 的人说是左边，70% 以上的人说是右边。
+
+83
+00:04:58,740 --> 00:05:02,272
+3%, 4%, comfortably admitting unsure, and that's fine.
+3%，4%，坦然承认不确定，这很好。
+
+84
+00:05:02,272 --> 00:05:04,230
+Let's wait for a few more responses to come in,
+让我们等等，看看还有没有其他回复，
+
+85
+00:05:04,230 --> 00:05:06,837
+though I think the right-hand folks have it.
+不过我认为右边的人是对的。
+
+86
+00:05:06,837 --> 00:05:09,420
+And let's go ahead and flip back and see what the solution is.
+让我们翻回去看看答案是什么。
+
+87
+00:05:09,420 --> 00:05:14,020
+In this case, it was, in fact, the right-hand side that was AI-generated.
+在这种情况下，实际上是右边的那一张是由人工智能生成的。
+
+88
+00:05:14,020 --> 00:05:15,127
+So, that's great.
+所以，这很棒。
+
+89
+00:05:15,127 --> 00:05:17,460
+I'm not sure what it means that we figured this one out,
+我不知道我们能猜出这个答案意味着什么，
+
+90
+00:05:17,460 --> 00:05:19,350
+but let's try one more here.
+但让我们再试一次。
+
+91
+00:05:19,350 --> 00:05:22,558
+So let me propose that we consider now these two images.
+所以，我建议我们现在考虑这两张图片。
+
+92
+00:05:22,558 --> 00:05:23,350
+It's the same code.
+是同一个代码。
+
+93
+00:05:23,350 --> 00:05:25,680
+So if you still have your phone up, you don't need to scan again.
+所以，如果你手机还在，你不需要再扫描了。
+
+94
+00:05:25,680 --> 00:05:27,250
+It's going to be the same URL here.
+这里将是同一个网址。
+
+95
+00:05:27,250 --> 00:05:28,650
+But just in case you closed it.
+但以防万一你关掉了。
+
+96
+00:05:28,650 --> 00:05:30,990
+Let's take a look now at these two images.
+现在让我们看看这两张图片。
+
+97
+00:05:30,990 --> 00:05:35,040
+Which of these, left or right, was AI-generated?
+这两张图片中哪一张，左边还是右边，是由人工智能生成的？
+
+98
+00:05:35,040 --> 00:05:38,802
+Left or right this time?
+这次是左边还是右边？
+
+99
+00:05:38,802 --> 00:05:41,010
+Rongxin, should we take a look at how it's coming in?
+容新，我们看看结果怎么样？
+
+100
+00:05:41,010 --> 00:05:42,570
+Oh, it's a little closer this time.
+哦，这次更接近了。
+
+101
+00:05:42,570 --> 00:05:44,540
+Left or right?
+左边还是右边？
+
+102
+00:05:44,540 --> 00:05:46,830
+Right's losing a little ground, maybe as people
+右边正在逐渐落后，可能是因为人们
+
+103
+00:05:46,830 --> 00:05:48,930
+are changing their answers to left.
+正在改变他们的答案，选左边。
+
+104
+00:05:48,930 --> 00:05:52,510
+More people are unsure this time, which is somewhat revealing.
+这次更多的人不确定，这多少有些说明问题。
+
+105
+00:05:52,510 --> 00:05:54,790
+Let's give folks another second or two.
+让我们再给人们一两秒钟。
+
+106
+00:05:54,790 --> 00:05:57,200
+And Rongxin, should we flip back?
+容新，我们翻回来吗？
+
+107
+00:05:57,200 --> 00:06:00,760
+The answer is, actually a trick question, since they were both AI.
+答案其实是，一个陷阱问题，因为它们都是人工智能。
+
+108
+00:06:00,760 --> 00:06:04,120
+So most of you, most of you were, in fact, right.
+所以你们大多数人，事实上是正确的。
+
+109
+00:06:04,120 --> 00:06:08,150
+But if you take a glance at this, is getting really, really good.
+但如果你看一下这个，它正在变得越来越好。
+
+110
+00:06:08,150 --> 00:06:13,220
+And so this is just a taste of the images that we might see down the line.
+所以这只是一些我们可能在未来看到的图片。
+
+111
+00:06:13,220 --> 00:06:16,930
+And in fact, that video with which we began,
+事实上，我们开始时播放的那段视频，
+
+112
+00:06:16,930 --> 00:06:20,440
+Tom Cruise, as you might have gleaned, was not, in fact, Tom Cruise.
+汤姆·克鲁斯，正如你可能已经了解到，事实上不是汤姆·克鲁斯。
+
+113
+00:06:20,440 --> 00:06:22,810
+That was an example of a deepfake, a video that
+那是一个深度伪造的例子，一段视频
+
+114
+00:06:22,810 --> 00:06:26,500
+was synthesized, whereby a different human was acting out those motions,
+是合成的，一个不同的人在做那些动作，
+
+115
+00:06:26,500 --> 00:06:31,660
+saying those words, but software, artificial intelligence-inspired
+说着那些话，但软件，受人工智能启发
+
+116
+00:06:31,660 --> 00:06:35,380
+software was mutating the actual image and faking this video.
+软件正在改变真实的图像，并且伪造了这段视频。
+
+117
+00:06:35,380 --> 00:06:38,950
+So it's all fun and games for now as we tinker with these kinds of examples,
+所以现在我们玩玩这些例子，看看效果如何，这很有趣。
+
+118
+00:06:38,950 --> 00:06:43,000
+but suffice it to say, as we've begun to discuss in classes like this already,
+但我要说的是，正如我们已经在这样的课堂上讨论过，
+
+119
+00:06:43,000 --> 00:06:46,240
+disinformation is only going to become more challenging in a world where
+在一个世界里，虚假信息只会变得更具挑战性，
+
+120
+00:06:46,240 --> 00:06:47,920
+it's not just text, but it's imagery.
+不仅仅是文字，还有图像。
+
+121
+00:06:47,920 --> 00:06:49,452
+And all the more, soon video.
+更重要的是，很快就会有视频。
+
+122
+00:06:49,452 --> 00:06:51,910
+But for today, we'll focus really on the fundamentals, what
+但今天，我们将重点关注基础，是什么
+
+123
+00:06:51,910 --> 00:06:56,230
+it is that's enabling technologies like these, and even more familiarly, text
+使得这些技术成为可能，更熟悉的例子是，文本
+
+124
+00:06:56,230 --> 00:06:57,970
+generation, which is all the rage.
+生成，它现在非常流行。
+
+125
+00:06:57,970 --> 00:07:01,240
+And in fact, it seems just a few months ago, probably everyone in this room
+事实上，几个月前，这个房间里的每个人可能
+
+126
+00:07:01,240 --> 00:07:04,030
+started to hear about tools like ChatGPT.
+都开始听说 ChatGPT 这样的工具。
+
+127
+00:07:04,030 --> 00:07:06,800
+So we thought we'd do one final exercise here as a group.
+所以我们认为，我们应该作为一个小组在这里做最后一个练习。
+
+128
+00:07:06,800 --> 00:07:08,800
+And this was another piece in The New York Times
+这是一篇《纽约时报》上的文章
+
+129
+00:07:08,800 --> 00:07:11,590
+where they asked the audience, "Did a fourth grader write this?
+他们问观众：“这是四年级学生写的吗？
+
+130
+00:07:11,590 --> 00:07:12,850
+Or the new chatbot?"
+还是新的聊天机器人？”
+
+131
+00:07:12,850 --> 00:07:15,640
+So another opportunity to assess your discerning skills.
+所以这是另一个评估你辨别能力的机会。
+
+132
+00:07:15,640 --> 00:07:16,450
+So same URL.
+所以相同的 URL。
+
+133
+00:07:16,450 --> 00:07:19,840
+So if you still have your phone open and that same interface open,
+所以如果你仍然打开你的手机，并且打开了相同的界面，
+
+134
+00:07:19,840 --> 00:07:21,470
+you're in the right place.
+你就在正确的地方。
+
+135
+00:07:21,470 --> 00:07:25,480
+And here, we'll take a final stab at two essays of sorts.
+在这里，我们将对两种类型的文章进行最后一次尝试。
+
+136
+00:07:25,480 --> 00:07:30,020
+Which of these essays was written by AI?
+哪篇是人工智能写的？
+
+137
+00:07:30,020 --> 00:07:32,260
+Essay 1 or Essay 2?
+文章 1 还是文章 2？
+
+138
+00:07:32,260 --> 00:07:34,450
+And as folks buzz in, I'll read the first.
+当人们给出答案的时候，我将阅读第一篇。
+
+139
+00:07:34,450 --> 00:07:35,020
+Essay 1.
+文章 1。
+
+140
+00:07:35,020 --> 00:07:37,870
+I like to bring a yummy sandwich and a cold juice box for lunch.
+我喜欢带一个美味的三明治和一盒冰镇果汁作为午餐。
+
+141
+00:07:37,870 --> 00:07:41,860
+Sometimes I'll even pack a tasty piece of fruit or a bag of crunchy chips.
+有时我还会带一块美味的水果或一袋脆脆的薯片。
+
+142
+00:07:41,860 --> 00:07:46,090
+As we eat, we chat and laugh and catch up on each other's day, dot, dot, dot.
+我们一边吃，一边聊天，一边笑，一边互相了解彼此的一天，点，点，点。
+
+143
+00:07:46,090 --> 00:07:46,690
+Essay 2.
+文章 2。
+
+144
+00:07:46,690 --> 00:07:49,243
+My mother packs me a sandwich, a drink, fruit, and a treat.
+我妈妈给我准备了一个三明治，饮料，水果和零食。
+
+145
+00:07:49,243 --> 00:07:51,910
+When I get in the lunchroom, I find an empty table and sit there
+当我进入餐厅时，我找了一张空桌子，坐在那里。
+
+146
+00:07:51,910 --> 00:07:52,930
+and I eat my lunch.
+然后我吃午餐。
+
+147
+00:07:52,930 --> 00:07:54,820
+My friends come and sit down with me.
+我的朋友们过来和我一起坐下。
+
+148
+00:07:54,820 --> 00:07:55,790
+Dot, dot, dot.
+点，点，点。
+
+149
+00:07:55,790 --> 00:07:57,550
+Rongxin, should we see what folks think?
+荣鑫，我们应该看看大家怎么想吗？
+
+150
+00:07:57,550 --> 00:08:03,040
+It looks like most of you think that Essay 1 was generated by AI.
+看起来你们大多数人认为第一篇论文是由AI生成的。
+
+151
+00:08:03,040 --> 00:08:09,010
+And in fact, if we flip back to the answer here, it was, in fact, Essay 1.
+事实上，如果我们翻回到这里答案，它确实是第一篇论文。
+
+152
+00:08:09,010 --> 00:08:13,060
+So it's great that we now already have seemingly this discerning eye,
+所以现在我们已经有了这种似乎有辨识力的眼睛，这很棒，
+
+153
+00:08:13,060 --> 00:08:15,880
+but let me perhaps deflate that enthusiasm
+但也许我应该让你们的热情消退一些，
+
+154
+00:08:15,880 --> 00:08:20,120
+by saying it's only going to get harder to discern one from the other.
+因为我要说，区分它们将会越来越难。
+
+155
+00:08:20,120 --> 00:08:23,680
+And we're really now on the bleeding edge of what's soon to be possible.
+而我们现在真正处于即将成为可能的尖端。
+
+156
+00:08:23,680 --> 00:08:25,990
+But most everyone in this room has probably by now
+但现在这个房间里的几乎每个人可能都已经
+
+157
+00:08:25,990 --> 00:08:31,450
+seen, tried, certainly heard of ChatGPT, which is all about textual generation.
+见过、尝试过，肯定也听说过ChatGPT，它完全是关于文本生成的。
+
+158
+00:08:31,450 --> 00:08:34,210
+Within CS50 and within academia more generally,
+在CS50内部，以及更广泛的学术界，
+
+159
+00:08:34,210 --> 00:08:37,690
+have we been thinking about, talking about, how whether to use or not
+我们一直在思考，讨论，是否要使用，以及如何使用
+
+160
+00:08:37,690 --> 00:08:39,023
+use these kinds of technologies.
+这些技术。
+
+161
+00:08:39,023 --> 00:08:42,148
+And if the students in the room haven't told the family members in the room
+如果房间里的学生还没有告诉房间里的家人
+
+162
+00:08:42,148 --> 00:08:45,010
+already, this here is an excerpt from CS50's own syllabus this year,
+已经，那么这里摘录了今年CS50自己的教学大纲，
+
+163
+00:08:45,010 --> 00:08:48,730
+whereby we have deemed tools like ChatGPT in their current form,
+我们认为像ChatGPT这样的工具，以其目前的形态，
+
+164
+00:08:48,730 --> 00:08:49,808
+just too helpful.
+实在是太有帮助了。
+
+165
+00:08:49,808 --> 00:08:51,850
+Sort of like an overzealous friend who in school,
+有点像一个热心过头的朋友，在学校里，
+
+166
+00:08:51,850 --> 00:08:55,520
+who just wants to give you all of the answers instead of leading you to them.
+他只想给你所有答案，而不是引导你找到答案。
+
+167
+00:08:55,520 --> 00:09:00,760
+And so we simply prohibit by policy using AI-based software,
+因此，我们根据政策禁止使用基于AI的软件，
+
+168
+00:09:00,760 --> 00:09:05,200
+such as ChatGPT, third-party tools like GitHub Copilot, Bing Chat, and others
+比如ChatGPT，像GitHub Copilot、Bing Chat这样的第三方工具，以及其他
+
+169
+00:09:05,200 --> 00:09:08,920
+that suggests or completes answers to questions or lines of code.
+为问题或代码行提供建议或完成答案的工具。
+
+170
+00:09:08,920 --> 00:09:13,510
+But it would seem reactionary to take away what technology surely has
+但似乎采取行动禁止这项技术，会剥夺其肯定具备的某些潜在优势。
+
+171
+00:09:13,510 --> 00:09:15,400
+some potential upsides for education.
+对教育的某些潜在优势。
+
+172
+00:09:15,400 --> 00:09:18,460
+And so within CS50 this semester, as well as this past summer,
+因此，在CS50本学期以及去年夏天，
+
+173
+00:09:18,460 --> 00:09:22,300
+have we allowed students to use CS50's own AI-based software, which
+我们允许学生使用CS50自己的基于AI的软件，它
+
+174
+00:09:22,300 --> 00:09:24,490
+are in effect, as we'll discuss, built on top
+实际上，正如我们即将讨论的，它是建立在
+
+175
+00:09:24,490 --> 00:09:27,700
+of these third-party tools, ChatGPT from OpenAI,
+这些第三方工具之上的，比如OpenAI的ChatGPT，
+
+176
+00:09:27,700 --> 00:09:29,440
+companies like Microsoft and beyond.
+还有像微软这样的公司等等。
+
+177
+00:09:29,440 --> 00:09:33,820
+And in fact, what students can now use, is this brought to life CS50 duck,
+事实上，学生现在可以使用的是这个活生生的CS50鸭子，
+
+178
+00:09:33,820 --> 00:09:37,270
+or DDB, Duck Debugger, within a website of our own,
+也就是DDB，Duck Debugger，它在我们的网站上，
+
+179
+00:09:37,270 --> 00:09:41,230
+CS50 AI, and another that your students know known as cs50.dev.
+CS50 AI，以及另一个你们的学生知道叫做cs50.dev的网站上。
+
+180
+00:09:41,230 --> 00:09:43,210
+So students are using it, but in a way where
+因此，学生们正在使用它，但使用的方式是
+
+181
+00:09:43,210 --> 00:09:46,120
+we have tempered the enthusiasm of what might otherwise
+我们抑制了这种可能会过度的热情，
+
+182
+00:09:46,120 --> 00:09:48,370
+be an overly helpful duck to model it more
+将它建模成一只更像
+
+183
+00:09:48,370 --> 00:09:50,480
+akin to a good teacher, a good teaching fellow,
+一位好老师，一位好助教，
+
+184
+00:09:50,480 --> 00:09:54,140
+who might guide you to the answers, but not simply hand them outright.
+他可能会引导你找到答案，但不会直接给你答案。
+
+185
+00:09:54,140 --> 00:09:57,170
+So what does that actually mean, and in what form does this duck come?
+那么，这实际上意味着什么呢？这只鸭子以什么形式出现呢？
+
+186
+00:09:57,170 --> 00:09:59,960
+Well, architecturally, for those of you with engineering backgrounds that
+好吧，从架构上讲，对于那些有工程背景的人来说，
+
+187
+00:09:59,960 --> 00:10:02,293
+might be curious as to how this is actually implemented,
+你们可能想知道这究竟是如何实现的，
+
+188
+00:10:02,293 --> 00:10:06,260
+if a student here in the class has a question, virtually in this case,
+如果课堂上的学生有一个问题，在这种情况下是虚拟的，
+
+189
+00:10:06,260 --> 00:10:10,820
+they somehow ask these questions of this central web application, cs50.ai.
+他们会以某种方式向这个名为cs50.ai的中央网络应用程序提出这些问题。
+
+190
+00:10:10,820 --> 00:10:13,760
+But we, in turn, have built much of our own logic
+但我们反过来，却在我们自己的逻辑基础上建立了许多东西
+
+191
+00:10:13,760 --> 00:10:18,050
+on top of third-party services, known as APIs, application programming
+它建立在第三方服务之上，也就是所谓的 API，应用程序编程
+
+192
+00:10:18,050 --> 00:10:20,780
+interfaces, features that other companies provide
+接口，其他公司提供的功能
+
+193
+00:10:20,780 --> 00:10:22,530
+that people like us can use.
+像我们这样的人可以使用。
+
+194
+00:10:22,530 --> 00:10:25,250
+So as they are doing really a lot of the heavy lifting,
+所以，当他们真正承担着很多重担时，
+
+195
+00:10:25,250 --> 00:10:27,380
+the so-called large language models are there.
+这些所谓的“大型语言模型”就出现了。
+
+196
+00:10:27,380 --> 00:10:30,350
+But we, too, have information that is not in these models yet.
+但我们也拥有这些模型中尚未包含的信息。
+
+197
+00:10:30,350 --> 00:10:32,720
+For instance, the words that came out of my mouth
+例如，我上周讲课时说的话
+
+198
+00:10:32,720 --> 00:10:36,500
+just last week when we had a lecture on some other topic, not to mention all
+我们上周讲课时说的话，不是关于其他话题，更不用说所有
+
+199
+00:10:36,500 --> 00:10:39,270
+of the past lectures and homework assignments from this year.
+今年过去的讲座和作业了。
+
+200
+00:10:39,270 --> 00:10:41,510
+So we have our own vector database locally
+所以我们本地有一个自己的向量数据库
+
+201
+00:10:41,510 --> 00:10:44,570
+via which we can search for more recent information,
+通过它我们可以搜索更新的信息，
+
+202
+00:10:44,570 --> 00:10:47,900
+and then hand some of that information into these models, which you might
+然后将其中一些信息提供给这些模型，您可能会
+
+203
+00:10:47,900 --> 00:10:51,870
+recall, at least for OpenAI, is cut off as of 2021 as
+回想一下，至少对于 OpenAI 来说，截止到 2021 年，它就被切断了，因为
+
+204
+00:10:51,870 --> 00:10:54,240
+of now, to make the information even more current.
+现在，为了使信息更及时。
+
+205
+00:10:54,240 --> 00:10:56,590
+So architecturally, that's sort of the flow.
+所以从架构上来说，这就是流程。
+
+206
+00:10:56,590 --> 00:10:58,980
+But for now, I thought I'd share at a higher level what
+但现在，我想在更高层面上分享一下什么
+
+207
+00:10:58,980 --> 00:11:01,440
+it is your students are already familiar with,
+这是你们学生已经熟悉的，
+
+208
+00:11:01,440 --> 00:11:04,230
+and what will soon be more broadly available to our own students
+以及很快就会更广泛地提供给我们自己的学生
+
+209
+00:11:04,230 --> 00:11:05,650
+online as well.
+在线。
+
+210
+00:11:05,650 --> 00:11:08,190
+So what we focused on is, what's generally
+所以我们关注的是，通常
+
+211
+00:11:08,190 --> 00:11:11,820
+now known as prompt engineering, which isn't really a technical phrase,
+现在被称为提示工程，这并不是一个真正的技术术语，
+
+212
+00:11:11,820 --> 00:11:14,500
+because it's not so much engineering in the traditional sense.
+因为它不像传统意义上的工程那样。
+
+213
+00:11:14,500 --> 00:11:16,650
+It really is just English, what we are largely
+它实际上就是英语，我们主要
+
+214
+00:11:16,650 --> 00:11:20,520
+doing when it comes to giving the AI the personality
+在给 AI 塑造性格方面所做的工作
+
+215
+00:11:20,520 --> 00:11:22,800
+of a good teacher or a good duck.
+一个好老师或一只好鸭子。
+
+216
+00:11:22,800 --> 00:11:26,460
+So what we're doing, is giving it what's known as a system prompt nowadays,
+所以我们现在所做的，就是给它一个被称为系统提示的东西，
+
+217
+00:11:26,460 --> 00:11:31,020
+whereby we write some English sentences, send those English sentences to OpenAI
+通过它，我们写一些英语句子，把这些英语句子发送到 OpenAI
+
+218
+00:11:31,020 --> 00:11:34,560
+or Microsoft, that sort of teaches it how to behave.
+或微软，它教会了它如何表现。
+
+219
+00:11:34,560 --> 00:11:36,930
+Not just using its own knowledge out of the box,
+不仅仅是使用它自己的知识，
+
+220
+00:11:36,930 --> 00:11:40,290
+but coercing it to behave a little more educationally constructively.
+而是迫使它在教育上表现得更有建设性。
+
+221
+00:11:40,290 --> 00:11:42,720
+And so for instance, a representative snippet
+所以，例如，一个代表性的片段
+
+222
+00:11:42,720 --> 00:11:44,622
+of English that we provide to these services
+我们提供给这些服务的英语看起来是这样的。
+
+223
+00:11:44,622 --> 00:11:46,080
+looks a little something like this.
+看起来有点像这样。
+
+224
+00:11:46,080 --> 00:11:50,600
+Quote, unquote, "You are a friendly and supportive teaching assistant for CS50.
+引号，引号，“您是 CS50 的友好且支持的助教。
+
+225
+00:11:50,600 --> 00:11:52,520
+You are also a rubber duck.
+您也是一只橡皮鸭。
+
+226
+00:11:52,520 --> 00:11:57,080
+You answer student questions only about CS50 and the field of computer science,
+您只回答学生关于 CS50 和计算机科学领域的问题，
+
+227
+00:11:57,080 --> 00:11:59,900
+do not answer questions about unrelated topics.
+不要回答与之无关的问题。
+
+228
+00:11:59,900 --> 00:12:02,060
+Do not provide full answers to problem sets,
+不要提供完整的答案集，
+
+229
+00:12:02,060 --> 00:12:04,130
+as this would violate academic honesty.
+因为这会违反学术诚信。
+
+230
+00:12:04,130 --> 00:12:07,610
+And so in essence, and you can do this manually with ChatGPT,
+所以本质上，你可以用 ChatGPT 手动做到这一点，
+
+231
+00:12:07,610 --> 00:12:09,990
+you can tell it or ask it how to behave.
+你可以告诉它或询问它如何表现。
+
+232
+00:12:09,990 --> 00:12:11,910
+We, essentially, are doing this automatically,
+我们实际上是自动执行这个操作的，
+
+233
+00:12:11,910 --> 00:12:14,240
+so that it doesn't just hand answers out of the box
+这样它就不会直接给出答案，
+
+234
+00:12:14,240 --> 00:12:16,310
+and knows a little something more about us.
+并且它会更多地了解我们。
+
+235
+00:12:16,310 --> 00:12:19,310
+There's also in this world of AI right now the notion of a user
+在当今的 AI 世界中，还有一个用户概念
+
+236
+00:12:19,310 --> 00:12:21,380
+prompt versus that system prompt.
+系统提示与用户提示之间的区别。
+
+237
+00:12:21,380 --> 00:12:25,060
+And the user prompt, in our case, is essentially the student's own question.
+用户提示，在我们这个例子中，本质上是学生自己的问题。
+
+238
+00:12:25,060 --> 00:12:29,630
+I have a question about x, or I have a problem with my code here in y,
+我对 x 有一个问题，或者我的代码在 y 中出现了问题，
+
+239
+00:12:29,630 --> 00:12:32,720
+so we pass to those same APIs, students' own questions
+所以我们将学生自己的问题传递给相同的 API
+
+240
+00:12:32,720 --> 00:12:34,670
+as part of this so-called user prompt.
+作为所谓的用户提示的一部分。
+
+241
+00:12:34,670 --> 00:12:37,490
+Just so you're familiar now with some of the vernacular of late.
+这样你就熟悉了现在流行的一些术语。
+
+242
+00:12:37,490 --> 00:12:39,200
+Now, the programming environment that students
+现在，学生们一直在使用的编程环境
+
+243
+00:12:39,200 --> 00:12:41,575
+have been using this whole year is known as Visual Studio
+整年都在使用的，叫做 Visual Studio
+
+244
+00:12:41,575 --> 00:12:45,260
+Code, a popular open source, free product, that most--
+Code，一个流行的开源免费产品，大多数
+
+245
+00:12:45,260 --> 00:12:47,450
+so many engineers around the world now use.
+世界各地的工程师都在使用它。
+
+246
+00:12:47,450 --> 00:12:50,580
+But we've instrumented it to be a little more course-specific
+但是我们已经对其进行了改造，使其更具课程针对性
+
+247
+00:12:50,580 --> 00:12:55,830
+with some course-specific features that make learning within this environment
+加入了一些课程特定的功能，让在这个环境中学习变得更加容易
+
+248
+00:12:55,830 --> 00:12:57,900
+all the easier.
+更容易。
+
+249
+00:12:57,900 --> 00:12:59,220
+It lives at cs50.dev.
+它位于 cs50.dev。
+
+250
+00:12:59,220 --> 00:13:02,370
+And as students in this room know, that as of now,
+正如在座的同学所知，截至目前，
+
+251
+00:13:02,370 --> 00:13:04,650
+the virtual duck lives within this environment
+虚拟鸭子就生活在这个环境中
+
+252
+00:13:04,650 --> 00:13:07,540
+and can do things like explain highlighted lines of code.
+并且能够做一些事情，比如解释高亮显示的代码行。
+
+253
+00:13:07,540 --> 00:13:10,560
+So here, for instance, is a screenshot of this programming environment.
+例如，这里是一个编程环境的截图。
+
+254
+00:13:10,560 --> 00:13:14,550
+Here is some arcane looking code in a language called C, that we've just
+这里是一些看起来很深奥的代码，是用 C 语言写的，我们刚刚
+
+255
+00:13:14,550 --> 00:13:16,082
+left behind us in the class.
+在课堂上留了下来。
+
+256
+00:13:16,082 --> 00:13:19,290
+And suppose that you don't understand what one or more of these lines of code
+假设你不理解这些代码行中的一行或多行
+
+257
+00:13:19,290 --> 00:13:19,790
+do.
+在做什么。
+
+258
+00:13:19,790 --> 00:13:23,580
+Students can now highlight those lines, right-click or Control click on it,
+现在，学生可以高亮显示这些行，右键单击或 Ctrl 单击它们，
+
+259
+00:13:23,580 --> 00:13:26,440
+select explain highlighted code, and voila,
+选择“解释高亮显示的代码”，瞧，
+
+260
+00:13:26,440 --> 00:13:32,040
+they see a ChatGPT-like explanation of that very code within a second or so,
+他们将在不到一秒钟的时间内看到类似 ChatGPT 的对这段代码的解释，
+
+261
+00:13:32,040 --> 00:13:35,100
+that no human has typed out, but that's been dynamically generated
+不是由人工输入的，而是动态生成的
+
+262
+00:13:35,100 --> 00:13:36,660
+based on this code.
+基于这段代码。
+
+263
+00:13:36,660 --> 00:13:39,450
+Other things that the duck can now do for students
+虚拟鸭子现在还可以为学生做其他事情
+
+264
+00:13:39,450 --> 00:13:42,960
+is advise students on how to improve their code style, the aesthetics,
+就是建议学生如何改进他们的代码风格，美观性，
+
+265
+00:13:42,960 --> 00:13:44,260
+the formatting thereof.
+以及格式。
+
+266
+00:13:44,260 --> 00:13:47,280
+And so for instance, here is similar code in a language called C.
+例如，这里是用 C 语言编写的类似代码。
+
+267
+00:13:47,280 --> 00:13:48,990
+And I'll stipulate that it's very messy.
+我必须说它非常乱。
+
+268
+00:13:48,990 --> 00:13:51,840
+Everything is left-aligned instead of nicely indented,
+所有内容都左对齐，而不是整齐地缩进，
+
+269
+00:13:51,840 --> 00:13:53,490
+so it looks a little more structured.
+看起来结构化了一点。
+
+270
+00:13:53,490 --> 00:13:54,870
+Students can now click a button.
+现在，学生可以点击一个按钮。
+
+271
+00:13:54,870 --> 00:13:56,820
+They'll see at the right-hand side in green
+他们会在右侧看到绿色
+
+272
+00:13:56,820 --> 00:13:58,650
+how their code should ideally look.
+他们的代码应该是什么样子。
+
+273
+00:13:58,650 --> 00:14:01,470
+And if they're not quite sure what those changes are or why,
+如果他们不太确定这些更改是什么或为什么，
+
+274
+00:14:01,470 --> 00:14:03,150
+they can click on, explain changes.
+他们可以点击“解释更改”。
+
+275
+00:14:03,150 --> 00:14:06,180
+And similarly, the duck advises them on how and why
+同样，虚拟鸭子会建议他们如何以及为什么
+
+276
+00:14:06,180 --> 00:14:08,970
+to turn their not great code into greater code,
+把他们不太好的代码变成更好的代码，
+
+277
+00:14:08,970 --> 00:14:11,250
+from left to right respectively.
+分别从左到右。
+
+278
+00:14:11,250 --> 00:14:15,450
+More compellingly and more generalizable beyond CS50 and beyond computer
+更令人信服的是，这种方法可以推广到 CS50 之外和计算机科学之外
+
+279
+00:14:15,450 --> 00:14:19,080
+science, is AI's ability to answer most of the questions
+领域，那就是人工智能能够回答学生们现在可能在网上问的大多数问题
+
+280
+00:14:19,080 --> 00:14:20,820
+that students might now ask online.
+这些问题。
+
+281
+00:14:20,820 --> 00:14:24,540
+And we've been doing asynchronous Q&A for years via various mobile or web
+多年来，我们一直通过各种移动或网络应用程序等方式进行异步问答。
+
+282
+00:14:24,540 --> 00:14:25,710
+applications and the like.
+之类的。
+
+283
+00:14:25,710 --> 00:14:28,680
+But to date, it has been humans, myself included,
+但到目前为止，一直都是人类，包括我在内，
+
+284
+00:14:28,680 --> 00:14:30,780
+responding to all of those questions.
+在回答所有这些问题。
+
+285
+00:14:30,780 --> 00:14:34,650
+Now the duck has an opportunity to chime in, generally within three seconds,
+现在，这只鸭子有机会插话，通常在三秒钟内，
+
+286
+00:14:34,650 --> 00:14:37,260
+because we've integrated it into an online Q&A tool
+因为我们已经将它集成到一个在线问答工具中
+
+287
+00:14:37,260 --> 00:14:40,960
+that students in CS50 and elsewhere across Harvard have long used.
+长期以来，哈佛大学的 CS50 以及其他地方的学生一直在使用这个工具。
+
+288
+00:14:40,960 --> 00:14:44,370
+So here's an anonymized screenshot of a question from an actual student,
+所以，这是一张来自实际学生的匿名截图，
+
+289
+00:14:44,370 --> 00:14:47,370
+but written here as John Harvard, who asked this summer,
+但这里写成约翰·哈佛，他在今年夏天问了这个问题，
+
+290
+00:14:47,370 --> 00:14:50,150
+in the summer version of CS50, what is flask exactly?
+在 CS50 的夏季版本中，flask 到底是什么？
+
+291
+00:14:50,150 --> 00:14:51,920
+So fairly definitional question.
+所以这是一个相当定义性的问题。
+
+292
+00:14:51,920 --> 00:14:55,250
+And here is what the duck spit out, thanks to that architecture
+而这就是这只鸭子吐出来的答案，感谢之前我描述的架构
+
+293
+00:14:55,250 --> 00:14:56,510
+I described before.
+我已经描述过了。
+
+294
+00:14:56,510 --> 00:14:59,210
+I'll stipulate that this is correct, but it is mostly
+我承认这是正确的，但它主要是
+
+295
+00:14:59,210 --> 00:15:02,820
+a definition, akin to what Google or Bing could already give you last year.
+一个定义，类似于谷歌或必应去年就能给你的东西。
+
+296
+00:15:02,820 --> 00:15:04,940
+But here's a more nuanced question, for instance,
+但这里有一个更微妙的问题，例如，
+
+297
+00:15:04,940 --> 00:15:06,800
+from another anonymized student.
+来自另一位匿名学生。
+
+298
+00:15:06,800 --> 00:15:10,160
+In this question here, the student's including an error message
+在这个问题中，学生包含了一个错误信息
+
+299
+00:15:10,160 --> 00:15:11,000
+that they're seeing.
+他们正在看到的。
+
+300
+00:15:11,000 --> 00:15:12,650
+They're asking about that.
+他们在问关于这个。
+
+301
+00:15:12,650 --> 00:15:15,890
+And they're asking a little more broadly and qualitatively, is there
+而且他们问得更广泛一点，从质量上来说，是否存在
+
+302
+00:15:15,890 --> 00:15:19,640
+a more efficient way to write this code, a question that really is best
+一种更有效的方式来编写这段代码，一个真正最好
+
+303
+00:15:19,640 --> 00:15:21,620
+answered based on experience.
+根据经验来回答的问题。
+
+304
+00:15:21,620 --> 00:15:25,130
+Here, I'll stipulate that the duck responded with this answer, which
+这里，我承认这只鸭子用这个答案做出了回应，这
+
+305
+00:15:25,130 --> 00:15:26,480
+is actually pretty darn good.
+实际上非常不错。
+
+306
+00:15:26,480 --> 00:15:29,630
+Not only responding in English, but with some sample starter code
+不仅用英语回答，而且还提供了一些示例入门代码
+
+307
+00:15:29,630 --> 00:15:31,430
+that would make sense in this context.
+在这种情况下的意义。
+
+308
+00:15:31,430 --> 00:15:34,580
+And at the bottom it's worth noting, because none of this technology
+值得注意的是，在底部，因为这些技术
+
+309
+00:15:34,580 --> 00:15:37,850
+is perfect just yet, it's still indeed very bleeding edge,
+目前还没有完美，它确实还处于非常前沿的阶段，
+
+310
+00:15:37,850 --> 00:15:41,960
+and so what we have chosen to do within CS50 is include disclaimers, like this.
+所以我们选择在 CS50 中做的事情是包含免责声明，比如这个。
+
+311
+00:15:41,960 --> 00:15:44,090
+I am an experimental bot, quack.
+我是一个实验性的机器人，嘎嘎。
+
+312
+00:15:44,090 --> 00:15:46,820
+Do not assume that my reply is accurate unless you see that it's
+不要假设我的回复是准确的，除非你看到它是
+
+313
+00:15:46,820 --> 00:15:50,040
+been endorsed by humans, quack.
+经过人类认可的，嘎嘎。
+
+314
+00:15:50,040 --> 00:15:53,160
+And in fact, at top right, the mechanism we've been using in this tool
+实际上，在右上角，我们在该工具中使用的机制
+
+315
+00:15:53,160 --> 00:15:54,510
+is usually within minutes.
+通常在几分钟内。
+
+316
+00:15:54,510 --> 00:15:57,690
+A human, whether it's a teaching fellow, a course assistant, or myself,
+一个人，无论是助教、助教，还是我自己，
+
+317
+00:15:57,690 --> 00:16:00,990
+will click on a button like this to signal to our human students
+会点击这样的按钮向我们的人类学生发出信号
+
+318
+00:16:00,990 --> 00:16:05,130
+that yes, like the duck is spot on here, or we have an opportunity, as always,
+是的，就像这只鸭子在这里说的那样，或者我们，一如既往，有机会
+
+319
+00:16:05,130 --> 00:16:07,020
+to chime in with our own responses.
+用我们自己的回答插话。
+
+320
+00:16:07,020 --> 00:16:09,770
+Frankly, that disclaimer, that button, will soon I do think
+坦率地说，那个免责声明，那个按钮，我认为很快
+
+321
+00:16:09,770 --> 00:16:11,770
+go away, as the software gets better and better.
+就会消失，因为软件越来越好。
+
+322
+00:16:11,770 --> 00:16:14,367
+But for now, that's how we're modulating exactly
+但就目前而言，这就是我们精确调节的方式
+
+323
+00:16:14,367 --> 00:16:16,200
+what students' expectations might be when it
+学生对它的期望可能是怎样的
+
+324
+00:16:16,200 --> 00:16:19,395
+comes to correctness or incorrectness.
+关于正确或错误。
+
+325
+00:16:19,395 --> 00:16:22,020
+It's common too in programming, to see a lot of error messages,
+在编程中，看到很多错误信息也很常见，
+
+326
+00:16:22,020 --> 00:16:24,210
+certainly when you're learning first-hand.
+当然，当你是亲身学习的时候。
+
+327
+00:16:24,210 --> 00:16:26,820
+A lot of these error messages are arcane, confusing,
+很多这些错误信息是神秘的，令人困惑的，
+
+328
+00:16:26,820 --> 00:16:29,310
+certainly to students, versus the people who wrote them.
+当然，对于学生来说，与编写它们的人相比。
+
+329
+00:16:29,310 --> 00:16:31,170
+Soon students will see a box like this.
+很快，学生们就会看到一个像这样的盒子。
+
+330
+00:16:31,170 --> 00:16:34,050
+Whenever one of their terminal window programs errs,
+每当他们的终端窗口程序出错时，
+
+331
+00:16:34,050 --> 00:16:39,120
+they'll be assisted too with English-like, TF-like support when
+他们也会得到像英语一样的、像教学助理一样的支持，当
+
+332
+00:16:39,120 --> 00:16:42,212
+it comes to explaining what it is that went wrong with that command.
+要解释那个命令哪里出了问题的时候。
+
+333
+00:16:42,212 --> 00:16:43,920
+And ultimately, what this is really doing
+最终，这实际上是在做
+
+334
+00:16:43,920 --> 00:16:45,900
+for students in our own experience already,
+对于我们自己的经验中已经有的学生来说，
+
+335
+00:16:45,900 --> 00:16:49,830
+is providing them really with virtual office hours and 24/7,
+实际上是在为他们提供虚拟的办公时间，而且是全天候的，
+
+336
+00:16:49,830 --> 00:16:52,560
+which is actually quite compelling in a university environment,
+这在大学环境中实际上是非常有吸引力的，
+
+337
+00:16:52,560 --> 00:16:55,110
+where students' schedules are already tightly packed,
+因为学生们的课程表已经排得满满当当了，
+
+338
+00:16:55,110 --> 00:16:58,270
+be it with academics, their curriculars, athletics, and the like--
+无论是学业、课外活动、体育运动等等——
+
+339
+00:16:58,270 --> 00:17:00,180
+--and they might have enough time to dive
+——他们可能会有足够的时间来深入研究
+
+340
+00:17:00,180 --> 00:17:03,510
+into a homework assignment, maybe eight hours even, for something sizable.
+一份作业，甚至可能要花八个小时，才能完成比较大的工作。
+
+341
+00:17:03,510 --> 00:17:06,390
+But if they hit that wall a couple of hours in, yeah,
+但是如果他们在做了几个小时后遇到了阻碍，是的，
+
+342
+00:17:06,390 --> 00:17:10,020
+they can go to office hours or they can ask a question asynchronously online,
+他们可以去参加办公时间，或者他们可以异步地在线提问，
+
+343
+00:17:10,020 --> 00:17:13,020
+but it's really not optimal in the moment support
+但这并不是及时提供支持的最佳方式
+
+344
+00:17:13,020 --> 00:17:15,150
+that we can now provide all the more effectively
+现在，我们可以更有效地提供这种支持，
+
+345
+00:17:15,150 --> 00:17:17,170
+we hope, through software, as well.
+我们希望，通过软件也能做到这一点。
+
+346
+00:17:17,170 --> 00:17:18,089
+So if you're curious.
+所以如果你好奇。
+
+347
+00:17:18,089 --> 00:17:20,797
+Even if you're not a technophile yourself, anyone on the internet
+即使你不是技术爱好者，任何上网的人
+
+348
+00:17:20,797 --> 00:17:24,000
+can go to cs50.ai and experiment with this user interface.
+都可以访问 cs50.ai 并尝试一下这个用户界面。
+
+349
+00:17:24,000 --> 00:17:29,940
+This one here actually resembles ChatGPT itself, but it's specific to CS50.
+这个实际上类似于 ChatGPT 本身，但它是专门针对 CS50 的。
+
+350
+00:17:29,940 --> 00:17:31,980
+And here again is just a sequence of screenshots
+这里再次展示了一系列屏幕截图，
+
+351
+00:17:31,980 --> 00:17:33,930
+that I'll stipulate for today's purposes,
+为了今天的目的，我需要说明，
+
+352
+00:17:33,930 --> 00:17:37,920
+are pretty darn good in akin to what I myself or a teaching fellow would reply
+它们非常类似于我自己或教学助理会回复的
+
+353
+00:17:37,920 --> 00:17:41,100
+to and answer to a student's question, in this case,
+的内容，并回答一个学生的问题，在这个例子中，
+
+354
+00:17:41,100 --> 00:17:42,930
+about their particular code.
+是关于他们特定的代码。
+
+355
+00:17:42,930 --> 00:17:45,240
+And ultimately, it's really aspirational.
+最终，这是非常有抱负的。
+
+356
+00:17:45,240 --> 00:17:49,320
+The goal here ultimately is to really approximate a one-to-one teacher
+这里的目标最终是真正模拟一对一的师生
+
+357
+00:17:49,320 --> 00:17:52,950
+to student ratio, which despite all of the resources we within CS50,
+比例，尽管我们在 CS50 中拥有所有这些资源，
+
+358
+00:17:52,950 --> 00:17:56,070
+we within Harvard and places like Yale have,
+我们在哈佛和耶鲁等地方拥有，
+
+359
+00:17:56,070 --> 00:17:58,650
+we certainly have never had enough resources
+我们当然从未拥有足够的资源
+
+360
+00:17:58,650 --> 00:18:00,690
+to approximate what might really be ideal,
+来模拟可能真正理想的东西，
+
+361
+00:18:00,690 --> 00:18:04,050
+which is more of an apprenticeship model, a mentorship, whereby it's just
+那就是更像学徒制模型，一种指导，它仅仅是
+
+362
+00:18:04,050 --> 00:18:06,145
+you and that teacher working one-to-one.
+你和老师一对一地工作。
+
+363
+00:18:06,145 --> 00:18:09,270
+Now we still have humans, and the goal is not to reduce that human support,
+现在我们仍然有老师，目标不是减少老师的支持，
+
+364
+00:18:09,270 --> 00:18:14,220
+but to focus it all the more consciously on the students who would benefit most
+而是更加有意识地将它集中在那些会从中受益最多的学生身上，
+
+365
+00:18:14,220 --> 00:18:17,100
+from some impersonal one-to-one support versus students
+从某种非个人的一对一支持中受益，而不是那些学生
+
+366
+00:18:17,100 --> 00:18:21,433
+who would happily take it at any hour of the day more digitally via online.
+他们会很乐意在一天中的任何时间通过网络以更数字化的方式接受这种支持。
+
+367
+00:18:21,433 --> 00:18:23,850
+And in fact, we're still in the process of evaluating just
+实际上，我们仍在评估
+
+368
+00:18:23,850 --> 00:18:25,560
+how well or not well all of this works.
+这一切到底能做到什么程度。
+
+369
+00:18:25,560 --> 00:18:28,800
+But based on our summer experiment alone with about 70 students
+但仅仅基于我们几个月的夏天实验，有大约 70 名学生
+
+370
+00:18:28,800 --> 00:18:31,770
+a few months back, one student wrote us at term's end it--
+几个月前，一个学生在学期结束时给我们写信说——
+
+371
+00:18:31,770 --> 00:18:33,660
+--"felt like having a personal tutor.
+——“感觉就像拥有一个私人导师。
+
+372
+00:18:33,660 --> 00:18:37,830
+I love how AI bots will answer questions without ego and without judgment.
+我喜欢人工智能机器人会毫无自尊和偏见地回答问题。”
+
+373
+00:18:37,830 --> 00:18:40,260
+Generally entertaining even the stupidest of questions
+即使是再愚蠢的问题，它也通常能令人愉快
+
+374
+00:18:40,260 --> 00:18:42,690
+without treating them like they're stupid.
+而不把他们当傻子对待。
+
+375
+00:18:42,690 --> 00:18:47,550
+It has an, as one could expect," ironically, "an inhuman level
+它有一种，正如人们所料，讽刺的是，“非人性的水平
+
+376
+00:18:47,550 --> 00:18:48,450
+of patience."
+的耐心”。
+
+377
+00:18:48,450 --> 00:18:51,870
+And so I thought that's telling as to how even one student is
+所以我觉得这说明了即使是一名学生
+
+378
+00:18:51,870 --> 00:18:54,490
+perceiving these new possibilities.
+也感知到了这些新的可能性。
+
+379
+00:18:54,490 --> 00:18:56,610
+So let's consider now more academically what
+所以，让我们从学术的角度来思考，
+
+380
+00:18:56,610 --> 00:18:58,920
+it is that's enabling those kinds of tools, not just
+是什么让这些工具成为可能，不仅仅是在
+
+381
+00:18:58,920 --> 00:19:02,370
+within CS50, within computer science, but really, the world more generally.
+CS50 内，在计算机科学中，而是真正意义上的，更广泛的世界。
+
+382
+00:19:02,370 --> 00:19:04,078
+What the whole world's been talking about
+全世界都在谈论的
+
+383
+00:19:04,078 --> 00:19:06,270
+is generative artificial intelligence.
+是生成式人工智能。
+
+384
+00:19:06,270 --> 00:19:09,630
+AI that can generate images, generate text, and sort of
+能够生成图像、生成文本，并以某种方式
+
+385
+00:19:09,630 --> 00:19:12,820
+mimic the behavior of what we think of as human.
+模仿我们认为人类的行为。
+
+386
+00:19:12,820 --> 00:19:14,240
+So what does that really mean?
+所以这到底意味着什么呢？
+
+387
+00:19:14,240 --> 00:19:15,990
+Well, let's start really at the beginning.
+好吧，让我们从头开始。
+
+388
+00:19:15,990 --> 00:19:19,170
+Artificial intelligence is actually a technique, a technology,
+人工智能实际上是一种技术，
+
+389
+00:19:19,170 --> 00:19:21,510
+a subject that's actually been with us for some time,
+一个我们已经接触了一段时间的学科，
+
+390
+00:19:21,510 --> 00:19:26,460
+but it really was the introduction of this very user-friendly interface known
+但真正让它流行起来的是这种非常友好的用户界面，它被称为
+
+391
+00:19:26,460 --> 00:19:28,230
+as ChatGPT.
+ChatGPT。
+
+392
+00:19:28,230 --> 00:19:31,440
+And some of the more recent academic work over really just the past five
+而最近的学术工作，仅仅是在过去的五年
+
+393
+00:19:31,440 --> 00:19:35,010
+or six years, that really allowed us to take a massive leap forward
+或六年里，让我们在技术上取得了巨大的进步
+
+394
+00:19:35,010 --> 00:19:38,520
+it would seem technologically, as to what these things can now do.
+似乎是技术上的，关于这些东西现在能做什么。
+
+395
+00:19:38,520 --> 00:19:40,330
+So what is artificial intelligence?
+所以人工智能是什么？
+
+396
+00:19:40,330 --> 00:19:43,410
+It's been with us for some time, and it's honestly, so omnipresent,
+它已经存在了一段时间，而且说实话，它无处不在，
+
+397
+00:19:43,410 --> 00:19:45,690
+that we take it for granted nowadays.
+以至于我们现在习以为常了。
+
+398
+00:19:45,690 --> 00:19:48,330
+Gmail, Outlook, have gotten really good at spam detection.
+Gmail、Outlook，在垃圾邮件检测方面做得越来越好。
+
+399
+00:19:48,330 --> 00:19:50,020
+If you haven't checked your spam folder in a while,
+如果你有一段时间没有查看你的垃圾邮件文件夹了，
+
+400
+00:19:50,020 --> 00:19:52,000
+that's testament to just how good they seem
+那就证明了他们似乎
+
+401
+00:19:52,000 --> 00:19:54,758
+to be at getting it out of your inbox.
+在将它从你的收件箱中删除方面做得很好。
+
+402
+00:19:54,758 --> 00:19:57,050
+Handwriting recognition has been with us for some time.
+手写识别已经存在了一段时间了。
+
+403
+00:19:57,050 --> 00:19:59,380
+I dare say, it, too, is only getting better and better
+我敢说，它也只会越来越好
+
+404
+00:19:59,380 --> 00:20:02,920
+the more the software is able to adapt to different handwriting
+软件越能适应不同的手写
+
+405
+00:20:02,920 --> 00:20:04,270
+styles, such as this.
+风格，比如这种。
+
+406
+00:20:04,270 --> 00:20:06,940
+Recommendation histories and the like, whether you're
+推荐历史等等，无论你是在
+
+407
+00:20:06,940 --> 00:20:09,190
+using Netflix or any other service, have gotten
+使用 Netflix 还是其他任何服务，都已经变得
+
+408
+00:20:09,190 --> 00:20:12,580
+better and better at recommending things you might like based on things
+越来越擅长根据你可能喜欢的东西来推荐你可能会喜欢的东西
+
+409
+00:20:12,580 --> 00:20:14,920
+you have liked, and maybe based on things
+你已经喜欢过的，也许是根据一些
+
+410
+00:20:14,920 --> 00:20:18,190
+other people who like the same thing as you might have liked.
+和你一样喜欢同一件事的人可能喜欢过的事情。
+
+411
+00:20:18,190 --> 00:20:20,560
+And suffice it to say, there's no one at Netflix
+而且可以这么说，Netflix 上没有一个人
+
+412
+00:20:20,560 --> 00:20:22,780
+akin to the old VHS stores of yesteryear,
+像过去那些老式的录像带店一样，
+
+413
+00:20:22,780 --> 00:20:26,590
+who are recommending to you specifically what movie you might like.
+专门向你推荐你可能喜欢的电影。
+
+414
+00:20:26,590 --> 00:20:31,330
+And there's no code, no algorithm that says, if they like x, then recommend y,
+而且没有代码，没有算法会说，如果他们喜欢 x，就推荐 y，
+
+415
+00:20:31,330 --> 00:20:34,762
+else recommend z, because there's just too many movies, too many people, too
+否则推荐 z，因为电影太多了，人太多了，口味也太多
+
+416
+00:20:34,762 --> 00:20:36,220
+many different tastes in the world.
+了。
+
+417
+00:20:36,220 --> 00:20:40,000
+So AI is increasingly sort of looking for patterns that might not even
+所以人工智能越来越倾向于寻找我们人类甚至无法察觉的模式，并动态地找出
+
+418
+00:20:40,000 --> 00:20:42,700
+be obvious to us humans, and dynamically figuring out
+
+
+419
+00:20:42,700 --> 00:20:46,750
+what might be good for me, for you or you, or anyone else.
+什么可能对我有好处，对你或你，或任何其他人都有好处。
+
+420
+00:20:46,750 --> 00:20:50,402
+Siri, Google Assistant, Alexa, any of these voice recognition tools
+Siri，Google 助理，Alexa，任何这些语音识别工具
+
+421
+00:20:50,402 --> 00:20:51,610
+that are answering questions.
+都在回答问题。
+
+422
+00:20:51,610 --> 00:20:54,918
+That, too, suffice it to say, is all powered by AI.
+毫无疑问，所有这些都由人工智能驱动。
+
+423
+00:20:54,918 --> 00:20:58,210
+But let's start with something a little simpler than any of those applications.
+但让我们从比任何这些应用都要简单一点的东西开始。
+
+424
+00:20:58,210 --> 00:21:01,522
+And this is one of the first arcade games from yesteryear known as Pong.
+这是一款早期的街机游戏，被称为“乓”。
+
+425
+00:21:01,522 --> 00:21:02,980
+And it's sort of like table tennis.
+它有点像乒乓球。
+
+426
+00:21:02,980 --> 00:21:05,440
+And the person on the left can move their paddle up and down.
+左边的人可以上下移动球拍。
+
+427
+00:21:05,440 --> 00:21:07,000
+Person on the right can do the same.
+右边的人也可以这样做。
+
+428
+00:21:07,000 --> 00:21:09,970
+And the goal is to get the ball past the other person,
+目标是让球越过对方，
+
+429
+00:21:09,970 --> 00:21:13,960
+or conversely, make sure it hits your paddle and bounces back.
+或者反过来，确保球击中你的球拍并反弹回来。
+
+430
+00:21:13,960 --> 00:21:17,440
+Well, somewhat simpler than this insofar as it can be one player,
+嗯，在某种程度上比这更简单，因为它可以是一人游戏，
+
+431
+00:21:17,440 --> 00:21:19,275
+is another Atari game from yesteryear known
+是另一款来自过去时代的雅达利游戏，被称为
+
+432
+00:21:19,275 --> 00:21:21,400
+as Breakout, whereby you're essentially just trying
+“吃豆人”，你基本上只是在尝试
+
+433
+00:21:21,400 --> 00:21:24,460
+to bang the ball against the bricks to get more and more points
+用球撞击砖块，获得越来越多的分数
+
+434
+00:21:24,460 --> 00:21:26,320
+and get rid of all of those bricks.
+并清除所有这些砖块。
+
+435
+00:21:26,320 --> 00:21:28,960
+But all of us in this room probably have a human instinct
+但我们房间里的所有人可能都有一种人类的本能
+
+436
+00:21:28,960 --> 00:21:32,800
+for how to win this game, or at least how to play this game.
+关于如何赢得这场游戏，或者至少如何玩这场游戏。
+
+437
+00:21:32,800 --> 00:21:36,430
+For instance, if the ball pictured here back in the '80s
+例如，如果这个球，就像 80 年代的图片一样
+
+438
+00:21:36,430 --> 00:21:41,530
+as a single red dot just left the paddle, pictured here as a red line,
+是一个红色的点刚刚离开球拍，这里用红色的线来表示，
+
+439
+00:21:41,530 --> 00:21:43,990
+where is the ball presumably going to go next?
+球接下来可能要去哪里？
+
+440
+00:21:43,990 --> 00:21:47,410
+And in turn, which direction should I slide my paddle?
+然后，我应该往哪个方向滑动球拍呢？
+
+441
+00:21:47,410 --> 00:21:49,900
+To the left or to the right?
+向左还是向右？
+
+442
+00:21:49,900 --> 00:21:51,630
+So presumably, to the left.
+所以，大概应该是向左。
+
+443
+00:21:51,630 --> 00:21:54,690
+And we all have an eye for what seemed to be the digital physics of that.
+我们都有一种眼光，可以判断出数字物理学的规律。
+
+444
+00:21:54,690 --> 00:21:57,540
+And indeed, that would then be an algorithm, sort of step
+实际上，这将成为一个算法，一种逐步的
+
+445
+00:21:57,540 --> 00:21:59,890
+by step instructions for solving some problem.
+解决问题的步骤说明。
+
+446
+00:21:59,890 --> 00:22:03,120
+So how can we now translate that human intuition to what we describe more
+那么，我们如何将这种人类直觉转化为我们更多地描述为
+
+447
+00:22:03,120 --> 00:22:04,780
+as artificial intelligence?
+人工智能的东西呢？
+
+448
+00:22:04,780 --> 00:22:07,290
+Not nearly as sophisticated as those other applications,
+不像那些其他应用程序那样复杂，
+
+449
+00:22:07,290 --> 00:22:09,000
+but we'll indeed, start with some basics.
+但我们确实会从一些基础知识开始。
+
+450
+00:22:09,000 --> 00:22:12,960
+You might know from economics or strategic thinking or computer science,
+你可能从经济学、战略思维或计算机科学中知道，
+
+451
+00:22:12,960 --> 00:22:15,640
+this idea of a decision tree that allows you to decide,
+决策树的概念，它可以让你决定，
+
+452
+00:22:15,640 --> 00:22:19,060
+should I go this way or this way when it comes to making a decision.
+在做决定时，我应该走这条路还是那条路。
+
+453
+00:22:19,060 --> 00:22:22,440
+So let's consider how we could draw a picture to represent even something
+那么，让我们考虑一下，如何画一幅图来表示像“吃豆人”这样简单的东西
+
+454
+00:22:22,440 --> 00:22:24,180
+simplistic like Breakout.
+这种简单的东西。
+
+455
+00:22:24,180 --> 00:22:28,290
+Well, if the ball is left of the paddle, is a question or a Boolean expression
+如果球在球拍的左边，这是一个问题或者一个布尔表达式
+
+456
+00:22:28,290 --> 00:22:29,940
+I might ask myself in code.
+我可能会在代码中问自己。
+
+457
+00:22:29,940 --> 00:22:34,500
+If yes, then I should move my paddle left, as most everyone just said.
+如果答案是肯定的，那么我应该将球拍向左移动，就像大多数人刚才说的那样。
+
+458
+00:22:34,500 --> 00:22:37,960
+Else, if the ball is not left of paddle, what do I want to do?
+否则，如果球不在球拍的左边，我想做什么？
+
+459
+00:22:37,960 --> 00:22:39,537
+Well, I want to ask a question.
+好吧，我想问一个问题。
+
+460
+00:22:39,537 --> 00:22:41,370
+I don't want to just instinctively go right.
+我不想只是本能地向右移动。
+
+461
+00:22:41,370 --> 00:22:44,010
+I want to check, is the ball to the right of the paddle,
+我想检查一下，球是否在球拍的右边，
+
+462
+00:22:44,010 --> 00:22:47,730
+and if yes, well, then yes, go ahead and move the paddle right.
+如果是，那么是的，继续将球拍向右移动。
+
+463
+00:22:47,730 --> 00:22:50,180
+But there is a third situation, which is--
+但还有第三种情况，那就是——
+
+464
+00:22:50,180 --> 00:22:51,163
+AUDIENCE: [INAUDIBLE]
+观众：[听不清]
+
+465
+00:22:51,163 --> 00:22:52,080
+DAVID J. MALAN: Right.
+大卫·J·马兰：没错。
+
+466
+00:22:52,080 --> 00:22:53,920
+Like, don't move, it's coming right at you.
+比如，别动，它正朝你而来。
+
+467
+00:22:53,920 --> 00:22:55,260
+So that would be the third scenario here.
+所以这将是这里的第三种情况。
+
+468
+00:22:55,260 --> 00:22:58,140
+No, it's not to the right or to the left, so just don't move the paddle.
+不，它既不向右也不向左，所以就不要移动挡板。
+
+469
+00:22:58,140 --> 00:23:00,660
+You got lucky, and it's coming, for instance, straight down.
+你很幸运，它比如是笔直向下过来的。
+
+470
+00:23:00,660 --> 00:23:04,170
+So Breakout is fairly straightforward when it comes to an algorithm.
+因此，在算法方面，Breakout 相当简单明了。
+
+471
+00:23:04,170 --> 00:23:07,200
+And we can actually translate this as any CS50 student now could,
+我们现在可以将其翻译成任何 CS50 学生都能理解的方式，
+
+472
+00:23:07,200 --> 00:23:11,400
+to code or pseudocode, sort of English-like code that's independent
+转换成代码或伪代码，一种类似英文的代码，它独立于
+
+473
+00:23:11,400 --> 00:23:15,280
+of Java, C, C++ and all of the programming languages of today.
+Java、C、C++ 和当今所有编程语言。
+
+474
+00:23:15,280 --> 00:23:17,940
+So in English pseudocode, while a game is
+所以用英文伪代码来说，当游戏
+
+475
+00:23:17,940 --> 00:23:22,230
+ongoing, if the ball is left of paddle, I should move paddle left.
+正在进行时，如果球在挡板的左侧，我应该将挡板向左移动。
+
+476
+00:23:22,230 --> 00:23:26,460
+Else if ball is right of the paddle, it should say paddle, that's a bug,
+否则，如果球在挡板的右侧，它应该说挡板，这是一个错误，
+
+477
+00:23:26,460 --> 00:23:29,520
+not intended today, move paddle right.
+今天不打算这样做，将挡板向右移动。
+
+478
+00:23:29,520 --> 00:23:31,710
+Else, don't move the paddle.
+否则，不要移动挡板。
+
+479
+00:23:31,710 --> 00:23:35,910
+So that, too, represents a translation of this intuition to code
+所以，这也代表了将这种直觉转化为代码，
+
+480
+00:23:35,910 --> 00:23:37,200
+that's very deterministic.
+这非常确定性。
+
+481
+00:23:37,200 --> 00:23:40,830
+You can anticipate all possible scenarios captured in code.
+你可以预料到代码中捕捉到的所有可能的情况。
+
+482
+00:23:40,830 --> 00:23:43,890
+And frankly, this should be the most boring game of Breakout,
+坦白地说，这应该是最无聊的 Breakout 游戏，
+
+483
+00:23:43,890 --> 00:23:47,250
+because the paddle should just perfectly play this game, assuming
+因为挡板应该完美地玩这个游戏，假设
+
+484
+00:23:47,250 --> 00:23:49,770
+there's no variables or randomness when it comes to speed
+速度方面没有变量或随机性，
+
+485
+00:23:49,770 --> 00:23:53,590
+or angles or the like, which real world games certainly try to introduce.
+角度等，而现实世界中的游戏当然会试图引入这些因素。
+
+486
+00:23:53,590 --> 00:23:55,570
+But let's consider another game from yesteryear
+但让我们考虑另一款过去的游戏，
+
+487
+00:23:55,570 --> 00:23:58,570
+that you might play with your kids today or you did yourself growing up.
+你今天可能会和你的孩子玩，或者你小时候自己玩过。
+
+488
+00:23:58,570 --> 00:23:59,590
+Here's tic-tac-toe.
+这里就是井字棋。
+
+489
+00:23:59,590 --> 00:24:02,860
+And for those unfamiliar, the goal is to get three O's in a row
+对于那些不熟悉的人来说，目标是在一行中获得三个 O
+
+490
+00:24:02,860 --> 00:24:07,180
+or three X's in a row, vertically, horizontally, or diagonally.
+或者三个 X，垂直、水平或对角线。
+
+491
+00:24:07,180 --> 00:24:09,970
+So suppose it's now X's turn.
+所以假设现在轮到 X 了。
+
+492
+00:24:09,970 --> 00:24:12,250
+If you've played tic-tac-toe, most of you
+如果你玩过井字棋，你们中的大多数人
+
+493
+00:24:12,250 --> 00:24:16,060
+probably just have an immediate instinct as to where X should probably go,
+可能会有一个直接的本能，知道 X 应该去哪里，
+
+494
+00:24:16,060 --> 00:24:18,970
+so that it doesn't lose instantaneously.
+这样就不会马上输掉。
+
+495
+00:24:18,970 --> 00:24:22,690
+But let's consider in the more general case, how do you solve tic-tac-toe.
+但让我们考虑更一般的情况，你如何解决井字棋？
+
+496
+00:24:22,690 --> 00:24:25,360
+Frankly, if you're in the habit of losing tic-tac-toe,
+坦白地说，如果你习惯于输井字棋，
+
+497
+00:24:25,360 --> 00:24:27,255
+but you're not trying to lose tic-tac-toe,
+但你并没有试图输井字棋，
+
+498
+00:24:27,255 --> 00:24:28,630
+you're actually playing it wrong.
+实际上，你的玩法是错误的。
+
+499
+00:24:28,630 --> 00:24:31,920
+Like, you should minimally be able to always force a tie in tic-tac-toe.
+就像，你至少应该能够在井字棋中一直迫使平局。
+
+500
+00:24:31,920 --> 00:24:34,420
+And better yet, you should be able to beat the other person.
+更重要的是，你应该能够击败对方。
+
+501
+00:24:34,420 --> 00:24:37,550
+So hopefully, everyone now will soon walk away with this strategy.
+所以希望，现在每个人都能很快掌握这个策略。
+
+502
+00:24:37,550 --> 00:24:41,020
+So how can we borrow inspiration from those same decision trees
+那么，我们如何从那些决策树中借鉴灵感，
+
+503
+00:24:41,020 --> 00:24:43,100
+and do something similar here?
+在这里做一些类似的事情？
+
+504
+00:24:43,100 --> 00:24:47,620
+So if you, the player, ask yourself, can I get three in a row on this turn?
+所以，如果你，玩家，问问自己，我这一回合能获得三个连线吗？
+
+505
+00:24:47,620 --> 00:24:51,970
+Well, if yes, then you should do that and play the X in that position.
+如果可以，那么你应该这样做，并在那个位置下 X。
+
+506
+00:24:51,970 --> 00:24:53,980
+Play in the square to get three in a row.
+下在那个方格里，就可以得到三个连线。
+
+507
+00:24:53,980 --> 00:24:54,820
+Straight forward.
+很直接。
+
+508
+00:24:54,820 --> 00:24:58,330
+If you can't get three in a row in this turn, you should ask another question.
+如果你这一回合不能获得三个连线，你应该问另一个问题。
+
+509
+00:24:58,330 --> 00:25:01,660
+Can my opponent get three in a row in their next turn?
+我的对手在下一次行动中能连成三子吗？
+
+510
+00:25:01,660 --> 00:25:06,220
+Because then you better preempt that by moving into that position.
+因为那样你最好抢先一步，走到那个位置。
+
+511
+00:25:06,220 --> 00:25:10,810
+Play in the square to block opponent's three in a row.
+在那个方格里下棋，以阻止对手连成三子。
+
+512
+00:25:10,810 --> 00:25:13,428
+What if though, that's not the case, right?
+但是如果情况并非如此呢？
+
+513
+00:25:13,428 --> 00:25:15,970
+What if there aren't even that many X's and O's on the board?
+如果棋盘上甚至没有那么多 X 和 O 呢？
+
+514
+00:25:15,970 --> 00:25:17,887
+If you're in the habit of just kind of playing
+如果你习惯了随意下棋
+
+515
+00:25:17,887 --> 00:25:21,940
+randomly, like you might not be playing optimally as a good AI could.
+就像你可能没有像好的 AI 一样玩得最优化。
+
+516
+00:25:21,940 --> 00:25:24,430
+So if no, it's kind of a question mark.
+所以如果不行，这有点像个问号。
+
+517
+00:25:24,430 --> 00:25:26,685
+In fact, there's probably more to this tree,
+事实上，这棵树可能还有更多内容，
+
+518
+00:25:26,685 --> 00:25:28,810
+because we could think through, what if I go there.
+因为我们可以考虑一下，如果我走到那里。
+
+519
+00:25:28,810 --> 00:25:30,977
+Wait a minute, what if I go there or there or there?
+等等，如果我走到那里，或者那里，或者那里呢？
+
+520
+00:25:30,977 --> 00:25:34,510
+You can start to think a few steps ahead as a computer could do much better even
+你可以开始提前几步思考，就像电脑可以做得更好一样，甚至
+
+521
+00:25:34,510 --> 00:25:35,540
+than us humans.
+比我们人类做得更好。
+
+522
+00:25:35,540 --> 00:25:37,388
+So suppose, for instance, it's O's turn.
+假设，例如，轮到 O 下棋了。
+
+523
+00:25:37,388 --> 00:25:39,430
+Now those of you who are very good at tic-tac-toe
+现在，你们中那些非常擅长玩井字棋的人
+
+524
+00:25:39,430 --> 00:25:40,870
+might have an instinct for where to go.
+可能会有直觉知道该去哪里。
+
+525
+00:25:40,870 --> 00:25:42,953
+But this is an even harder problem, it would seem.
+但这个问题似乎更难。
+
+526
+00:25:42,953 --> 00:25:45,370
+I could go in eight possible places if I'm O.
+如果我是 O，我可以走到八个可能的位置。
+
+527
+00:25:45,370 --> 00:25:49,570
+But let's try to break that down more algorithmically, as in AI would.
+但让我们尝试更算法化地分解它，就像 AI 一样。
+
+528
+00:25:49,570 --> 00:25:53,830
+And let's recognize, too, that with games in particular, one of the reasons
+另外，我们也应该认识到，特别是对于游戏来说，AI 如此早地在这些游戏中被采用的原因之一
+
+529
+00:25:53,830 --> 00:25:58,330
+that AI was so early adopted in these games, playing the CPU,
+就是 AI 很早就被应用在这些游戏中，与 CPU 对战，
+
+530
+00:25:58,330 --> 00:26:02,020
+is that games really lend themselves to defining them,
+是因为游戏本身就适合用数学来定义，
+
+531
+00:26:02,020 --> 00:26:04,120
+if taking the fun out of it mathematically.
+如果用数学方法剥离游戏的趣味性。
+
+532
+00:26:04,120 --> 00:26:07,600
+Defining them in terms of inputs and outputs, maybe paddle moving
+用输入和输出的方式定义它们，比如球拍左右移动
+
+533
+00:26:07,600 --> 00:26:10,040
+left or right, ball moving up or down.
+，球上下移动。
+
+534
+00:26:10,040 --> 00:26:13,090
+You can really quantize it at a very boring low level.
+你真的可以在非常无聊的低级别上量化它。
+
+535
+00:26:13,090 --> 00:26:16,060
+But that lends itself then to solving it optimally.
+但这就可以帮助我们找到最优解。
+
+536
+00:26:16,060 --> 00:26:19,630
+And in fact, with most games, the goal is to maximize or maybe
+事实上，在大多数游戏中，目标是最大化或者最小化某个数学函数，对吧？
+
+537
+00:26:19,630 --> 00:26:21,790
+minimize some math function, right?
+大多数游戏，如果你有分数，目标是最大化你的分数，
+
+538
+00:26:21,790 --> 00:26:24,910
+Most games, if you have scores, the goal is to maximize your score,
+并且确实要获得高分。
+
+539
+00:26:24,910 --> 00:26:26,750
+and indeed, get a high score.
+所以游戏很容易翻译成数学，
+
+540
+00:26:26,750 --> 00:26:31,510
+So games lend themselves to a nice translation to mathematics,
+反过来，也就可以应用于 AI 解决办法。
+
+541
+00:26:31,510 --> 00:26:33,410
+and in turn here, AI solutions.
+所以，人们在算法课和人工智能课上可能会学习到的第一个算法之一
+
+542
+00:26:33,410 --> 00:26:37,690
+So one of the first algorithms one might learn in a class on algorithms
+就是极小极大算法，它暗示了尝试
+
+543
+00:26:37,690 --> 00:26:39,490
+and on artificial intelligence is something
+最小化或最大化你的函数，也就是你的目标。
+
+544
+00:26:39,490 --> 00:26:41,860
+called minimax, which alludes to this idea of trying
+它实际上从我们一直在讨论的决策树中汲取灵感。
+
+545
+00:26:41,860 --> 00:26:46,060
+to minimize and/or maximize something as your function, your goal.
+但首先，一个定义。
+
+546
+00:26:46,060 --> 00:26:49,890
+And it actually derives its inspiration from these same decision trees
+这里有三块代表性的井字棋棋盘。
+
+547
+00:26:49,890 --> 00:26:51,140
+that we've been talking about.
+这块棋盘中，O 已经明显赢了，用绿色标记出来。
+
+548
+00:26:51,140 --> 00:26:52,390
+But first, a definition.
+这块棋盘中，X 已经明显赢了，用绿色标记出来。
+
+549
+00:26:52,390 --> 00:26:55,210
+Here are three representative tic-tac-toe boards.
+而中间这块棋盘则代表平局。
+
+550
+00:26:55,210 --> 00:26:58,570
+Here is one in which O has clearly won, per the green.
+现在，井字棋还有很多其他结束方式，但这里
+
+551
+00:26:58,570 --> 00:27:01,537
+Here is one in which X has clearly won, per the green.
+只是三个代表性的结束方式。
+
+552
+00:27:01,537 --> 00:27:03,620
+And this one in the middle just represents a draw.
+。
+
+553
+00:27:03,620 --> 00:27:06,662
+Now, there's a bunch of other ways that tic-tac-toe could end, but here's
+。
+
+554
+00:27:06,662 --> 00:27:08,050
+just three representative ones.
+。
+
+555
+00:27:08,050 --> 00:27:10,223
+But let's make tic-tac-toe even more boring
+但让我们让井字棋变得更无聊
+
+556
+00:27:10,223 --> 00:27:11,890
+than it might have always struck you as.
+比你一直以来的印象还要无聊。
+
+557
+00:27:11,890 --> 00:27:15,130
+Let's propose that this kind of configuration
+让我们假设这种配置
+
+558
+00:27:15,130 --> 00:27:17,230
+should have a score of negative 1.
+应该有一个负 1 的分数。
+
+559
+00:27:17,230 --> 00:27:19,030
+If O wins, it's a negative 1.
+如果 O 赢了，分数是负 1。
+
+560
+00:27:19,030 --> 00:27:21,340
+If X wins, it's a positive 1.
+如果 X 赢了，分数是正 1。
+
+561
+00:27:21,340 --> 00:27:23,350
+And if no one wins, we'll call it a 0.
+如果没有人赢，我们就称之为 0。
+
+562
+00:27:23,350 --> 00:27:27,280
+We need some way of talking about and reasoning about which of these outcomes
+我们需要一些方法来讨论和推理这些结果中的哪一个
+
+563
+00:27:27,280 --> 00:27:28,520
+is better than the other.
+比另一个更好。
+
+564
+00:27:28,520 --> 00:27:31,450
+And what's simpler than 0, 1 and negative 1?
+还有什么比 0、1 和负 1 更简单呢？
+
+565
+00:27:31,450 --> 00:27:33,760
+So the goal though, of X, it would seem, is
+因此，X 的目标，似乎是
+
+566
+00:27:33,760 --> 00:27:38,530
+to maximize its score, but the goal of O is to minimize its score.
+最大化它的分数，但 O 的目标是最小化它的分数。
+
+567
+00:27:38,530 --> 00:27:42,400
+So X is really trying to get positive 1, O is really trying to get negative 1.
+所以 X 实际上是在试图获得正 1，O 实际上是在试图获得负 1。
+
+568
+00:27:42,400 --> 00:27:46,610
+And no one really wants 0, but that's better than losing to the other person.
+而且没有人真正想要 0，但那比输给对方要好。
+
+569
+00:27:46,610 --> 00:27:49,900
+So we have now a way to define what it means to win or lose.
+所以我们现在有了一种方法来定义什么是赢或输。
+
+570
+00:27:49,900 --> 00:27:52,790
+Well, now we can employ a strategy here.
+好吧，现在我们可以在这里使用一种策略。
+
+571
+00:27:52,790 --> 00:27:56,210
+Here, just as a quick check, what would the score be of this board?
+在这里，作为快速检查，这个棋盘的分数是多少？
+
+572
+00:27:56,210 --> 00:27:58,020
+Just so everyone's on the same page.
+为了让大家都在同一页上。
+
+573
+00:27:58,020 --> 00:27:58,520
+AUDIENCE: 1.
+观众：1。
+
+574
+00:27:58,520 --> 00:28:02,000
+DAVID J. MALAN: Or, so 1, because X has one and we just stipulated arbitrarily,
+大卫·马兰：或者，是 1，因为 X 有一个，我们只是武断地规定，
+
+575
+00:28:02,000 --> 00:28:04,190
+this means that this board has a value of 1.
+这意味着这个棋盘的值是 1。
+
+576
+00:28:04,190 --> 00:28:06,740
+Now let's put it into a more interesting context.
+现在让我们把它放到一个更有趣的语境中。
+
+577
+00:28:06,740 --> 00:28:09,320
+Here, a game has been played for a few moves already.
+在这里，一场比赛已经进行了几回合了。
+
+578
+00:28:09,320 --> 00:28:10,890
+There's two spots left.
+还剩下两个位置。
+
+579
+00:28:10,890 --> 00:28:12,590
+No one has won just yet.
+还没有人获胜。
+
+580
+00:28:12,590 --> 00:28:14,982
+And suppose that it's O's turn now.
+假设现在轮到 O 了。
+
+581
+00:28:14,982 --> 00:28:17,690
+Now, everyone probably has an instinct already as to where to go,
+现在，每个人可能已经有了关于下一步该去哪里的直觉，
+
+582
+00:28:17,690 --> 00:28:20,510
+but let's try to break this down more algorithmically.
+但让我们尝试更算法地分解它。
+
+583
+00:28:20,510 --> 00:28:22,430
+So what is the value of this board?
+那么这个棋盘的值是多少？
+
+584
+00:28:22,430 --> 00:28:25,430
+Well, we don't know yet, because no one has won,
+好吧，我们还不知道，因为还没有人获胜，
+
+585
+00:28:25,430 --> 00:28:28,440
+so let's consider what could happen next.
+所以让我们考虑接下来会发生什么。
+
+586
+00:28:28,440 --> 00:28:31,310
+So we can draw this actually as a tree, as before.
+所以我们可以像之前一样把它画成一棵树。
+
+587
+00:28:31,310 --> 00:28:33,470
+Here, for instance, is what might happen if O
+例如，如果 O
+
+588
+00:28:33,470 --> 00:28:35,270
+goes into the top left-hand corner.
+走到左上角。
+
+589
+00:28:35,270 --> 00:28:39,830
+And here's what might happen if O goes into the bottom middle spot instead.
+如果 O 走到下方的中间位置，可能会发生这种情况。
+
+590
+00:28:39,830 --> 00:28:42,530
+We should ask ourselves, what's the value of this board, what's
+我们应该问问自己，这个棋盘的值是多少，什么
+
+591
+00:28:42,530 --> 00:28:43,530
+the value of this board?
+是这个棋盘的值？
+
+592
+00:28:43,530 --> 00:28:46,340
+Because if O's purpose in life is to minimize its score,
+因为如果 O 生存的目的是最小化它的分数，
+
+593
+00:28:46,340 --> 00:28:49,850
+it's going to go left or right based on whichever yields the smallest number.
+它将向左或向右移动，取决于哪边产生最小的数字。
+
+594
+00:28:49,850 --> 00:28:51,390
+Negative 1, ideally.
+理想情况下是负 1。
+
+595
+00:28:51,390 --> 00:28:55,230
+But we're still not sure yet, because we don't have definitions for boards
+但我们还不确定，因为我们还没有定义带有像这样空位的棋盘
+
+596
+00:28:55,230 --> 00:28:56,770
+with holes in them like this.
+带有像这样空位的棋盘。
+
+597
+00:28:56,770 --> 00:28:58,380
+So what could happen next here?
+那么这里接下来会发生什么？
+
+598
+00:28:58,380 --> 00:29:00,480
+Well, it's obviously going to be X's turn next.
+好吧，很明显接下来轮到 X 了。
+
+599
+00:29:00,480 --> 00:29:05,080
+So if X moves, unfortunately, X has one in this configuration.
+所以如果 X 移动，不幸的是，X 在这种配置中有一个。
+
+600
+00:29:05,080 --> 00:29:08,980
+We can now conclude that the value of this board is what number?
+现在我们可以得出结论，这个棋盘的值是多少？
+
+601
+00:29:08,980 --> 00:29:09,480
+AUDIENCE: 1.
+观众：1。
+
+602
+00:29:09,480 --> 00:29:10,620
+DAVID J. MALAN: So 1.
+大卫·马兰：所以是 1。
+
+603
+00:29:10,620 --> 00:29:14,970
+And because there's only one way to reach this board, by transitivity,
+而且因为只有一个方法可以到达这个棋盘，通过传递性，
+
+604
+00:29:14,970 --> 00:29:19,080
+you might as well think of the value of this previous board as also 1,
+你也可以把这个之前棋盘的价值看成是 1，
+
+605
+00:29:19,080 --> 00:29:21,760
+because no matter what, it's going to lead to that same outcome.
+因为无论如何，它都会导致相同的结果。
+
+606
+00:29:21,760 --> 00:29:25,890
+And so the value of this board is actually still to be determined,
+所以这个棋盘的价值实际上还有待确定，
+
+607
+00:29:25,890 --> 00:29:28,440
+because we don't know if O is going to want to go with the 1,
+因为我们不知道 O 是否会选择 1，
+
+608
+00:29:28,440 --> 00:29:30,600
+and probably not, because that means X wins.
+可能不会，因为这意味着 X 获胜。
+
+609
+00:29:30,600 --> 00:29:32,520
+But let's see what the value of this board is.
+但让我们看看这个棋盘的价值。
+
+610
+00:29:32,520 --> 00:29:36,370
+Well, suppose that indeed, X goes in that top left corner here.
+好吧，假设 X 确实放在了左上角这里。
+
+611
+00:29:36,370 --> 00:29:39,540
+What's the value of this board here?
+这个棋盘的价值是多少？
+
+612
+00:29:39,540 --> 00:29:41,140
+0, because no one has won.
+0，因为没有人获胜。
+
+613
+00:29:41,140 --> 00:29:43,390
+There's no X's or O's three in a row.
+没有三个 X 或三个 O 排成一排。
+
+614
+00:29:43,390 --> 00:29:45,000
+So the value of this board is 0.
+所以这个棋盘的价值是 0。
+
+615
+00:29:45,000 --> 00:29:47,140
+There's only one way logically to get there,
+从逻辑上讲，只有一条路可以到达那里，
+
+616
+00:29:47,140 --> 00:29:50,190
+so we might as well think of the value of this board as also 0.
+所以我们也可以把这个棋盘的价值看成是 0。
+
+617
+00:29:50,190 --> 00:29:53,100
+And so now, what's the value of this board?
+所以现在，这个棋盘的价值是多少？
+
+618
+00:29:53,100 --> 00:29:56,370
+Well, if we started the story by thinking about O's turn,
+好吧，如果我们从考虑 O 的回合开始，
+
+619
+00:29:56,370 --> 00:30:01,860
+O's purpose is the min in minimax, then which move is O going to make?
+O 的目标是在极小极大算法中最小化，那么 O 会选择哪一步？
+
+620
+00:30:01,860 --> 00:30:05,030
+Go to the left or go to the right?
+是去左边还是右边？
+
+621
+00:30:05,030 --> 00:30:06,800
+O's was probably going to go to the right
+O 可能会选择去右边
+
+622
+00:30:06,800 --> 00:30:10,880
+and make the move that leads to, whoops, that leads to this board,
+并走一步，哎呀，导致了这个棋盘，
+
+623
+00:30:10,880 --> 00:30:15,200
+because even though O can't win in this configuration, at least X didn't win.
+因为尽管 O 在这种情况下不能获胜，但至少 X 也没有获胜。
+
+624
+00:30:15,200 --> 00:30:19,190
+So it's minimized its score relatively, even though it's not a clean win.
+因此，它相对地最小化了得分，即使没有取得完全胜利。
+
+625
+00:30:19,190 --> 00:30:21,500
+Now, this is all fine and good for a configuration
+现在，对于一个几乎完成的棋盘来说，这一切都很好。
+
+626
+00:30:21,500 --> 00:30:23,243
+of the board that's like almost done.
+棋盘几乎完成了。
+
+627
+00:30:23,243 --> 00:30:24,410
+There's only two moves left.
+只剩下两步了。
+
+628
+00:30:24,410 --> 00:30:25,770
+The game's about to end.
+游戏即将结束。
+
+629
+00:30:25,770 --> 00:30:27,830
+But if you kind of expand in your mind's eye,
+但是如果你在脑海中扩展一下，
+
+630
+00:30:27,830 --> 00:30:30,810
+how did we get to this branch of the decision tree,
+我们是怎么来到决策树的这个分支的，
+
+631
+00:30:30,810 --> 00:30:34,010
+if we rewind one step where there's three possible moves,
+如果我们回退一步，有三种可能的走法，
+
+632
+00:30:34,010 --> 00:30:36,260
+frankly, the decision tree is a lot bigger.
+坦白说，决策树要大得多。
+
+633
+00:30:36,260 --> 00:30:39,350
+If we rewind further in your mind's eye and have four moves
+如果我们在脑海中再回退一步，有四步
+
+634
+00:30:39,350 --> 00:30:41,760
+left or five moves or all nine moves left,
+剩余的走法，或者五步，或者九步，
+
+635
+00:30:41,760 --> 00:30:43,550
+imagine just zooming out, out, and out.
+想象一下，不断地向外缩放。
+
+636
+00:30:43,550 --> 00:30:46,940
+This is becoming a massive, massive tree of decisions.
+这变成了一个巨大的决策树。
+
+637
+00:30:46,940 --> 00:30:51,110
+Now, even so, here is that same subtree, the same decision tree
+现在，即使如此，这里还是相同的子树，相同的决策树
+
+638
+00:30:51,110 --> 00:30:51,860
+we just looked at.
+我们刚刚看过的。
+
+639
+00:30:51,860 --> 00:30:54,050
+This is the exact same thing, but I shrunk the font so
+这是完全一样的，但我缩小了字体，所以
+
+640
+00:30:54,050 --> 00:30:55,760
+that it appears here on the screen here.
+它显示在屏幕上这里。
+
+641
+00:30:55,760 --> 00:30:59,660
+But over here, we have what could happen if instead,
+但在另一边，我们有可能会发生的情况，如果相反，
+
+642
+00:30:59,660 --> 00:31:03,680
+it's actually X's turn, because we're one move prior.
+实际上是 X 的回合，因为我们提前了一步。
+
+643
+00:31:03,680 --> 00:31:06,420
+There's a bunch of different moves X could now make, too.
+现在 X 也可以做出很多不同的走法。
+
+644
+00:31:06,420 --> 00:31:08,350
+So what is the implication of this?
+那么这有什么意义呢？
+
+645
+00:31:08,350 --> 00:31:12,930
+Well, most humans are not thinking through tic-tac-toe to this extreme.
+好吧，大多数人不会如此极端地思考井字棋。
+
+646
+00:31:12,930 --> 00:31:15,780
+And frankly, most of us probably just don't have the mental capacity
+坦白说，我们大多数人可能没有这样的思维能力
+
+647
+00:31:15,780 --> 00:31:18,360
+to think about going left and then right and then left and then right.
+去想左然后右然后左然后右。
+
+648
+00:31:18,360 --> 00:31:18,860
+Right?
+对吧？
+
+649
+00:31:18,860 --> 00:31:20,610
+This is not how people play tic-tac-toe.
+人们不是这样玩井字棋的。
+
+650
+00:31:20,610 --> 00:31:23,190
+Like, we're not using that much memory, so to speak.
+也就是说，我们并没有用到那么多的记忆。
+
+651
+00:31:23,190 --> 00:31:26,010
+But a computer can handle that, and computers
+但是计算机可以处理这些，而且计算机
+
+652
+00:31:26,010 --> 00:31:27,850
+can play tic-tac-toe optimally.
+可以最佳地玩井字棋。
+
+653
+00:31:27,850 --> 00:31:30,360
+So if you're beating a computer at tic-tac-toe, like,
+所以如果你在井字棋中打败了计算机，就像，
+
+654
+00:31:30,360 --> 00:31:31,770
+it's not implemented very well.
+它没有很好地实现。
+
+655
+00:31:31,770 --> 00:31:36,420
+It's not following this very logical, deterministic minimax algorithm.
+它没有遵循这种非常逻辑的确定性极小极大算法。
+
+656
+00:31:36,420 --> 00:31:40,470
+But this is where now AI is no longer as simple as just
+但现在人工智能不再像以前那样简单
+
+657
+00:31:40,470 --> 00:31:42,570
+doing what these decision trees say.
+仅仅做这些决策树所说的。
+
+658
+00:31:42,570 --> 00:31:45,780
+In the context of tic-tac-toe, here's how we might translate this
+在井字棋的背景下，以下是我们可以将它翻译成
+
+659
+00:31:45,780 --> 00:31:46,870
+to code, for instance.
+代码的方式，例如。
+
+660
+00:31:46,870 --> 00:31:49,830
+If player is X, for each possible move, calculate
+如果玩家是X，对于每一种可能的走法，计算
+
+661
+00:31:49,830 --> 00:31:52,200
+a score for the board, as we were doing verbally,
+棋盘的分数，就像我们口头所说的那样，
+
+662
+00:31:52,200 --> 00:31:54,600
+and then choose the move with the highest score.
+然后选择分数最高的走法。
+
+663
+00:31:54,600 --> 00:31:57,420
+Because X's goal is to maximize its score.
+因为X的目标是最大化它的分数。
+
+664
+00:31:57,420 --> 00:32:00,090
+If the player is O, though, for each possible move,
+如果玩家是O，那么对于每一种可能的走法，
+
+665
+00:32:00,090 --> 00:32:02,010
+calculate a score for the board, and then
+计算棋盘的分数，然后
+
+666
+00:32:02,010 --> 00:32:04,210
+choose the move with the lowest score.
+选择分数最低的走法。
+
+667
+00:32:04,210 --> 00:32:06,600
+So that's a distillation of that verbal walkthrough
+所以这就是对那个口头演练的提炼
+
+668
+00:32:06,600 --> 00:32:10,290
+into what CS50 students know now as code, or at least pseudocode.
+成为 CS50 学生现在所知的代码，或者至少是伪代码。
+
+669
+00:32:10,290 --> 00:32:15,120
+But the problem with games, not so much tic-tac-toe, but other more
+但是游戏的难题，不只是井字棋，而是其他更加
+
+670
+00:32:15,120 --> 00:32:16,650
+sophisticated games is this.
+复杂的棋类游戏是这样的。
+
+671
+00:32:16,650 --> 00:32:19,890
+Does anyone want to ballpark how many possible ways there
+有人想大概估计一下有多少种可能的方式
+
+672
+00:32:19,890 --> 00:32:22,940
+are to play tic-tac-toe?
+可以玩井字棋？
+
+673
+00:32:22,940 --> 00:32:26,180
+Paper, pencil, two human children, how many different ways?
+纸笔，两个小孩，有多少种不同的方式？
+
+674
+00:32:26,180 --> 00:32:30,893
+How long could you keep them occupied playing tic-tac-toe in different ways?
+你能让他们用不同的方式玩井字棋玩多久？
+
+675
+00:32:30,893 --> 00:32:33,310
+If you actually think through, how big does this tree get,
+如果你真的想一想，这棵树有多大，
+
+676
+00:32:33,310 --> 00:32:36,160
+how many leaves are there on this decision tree, like how many
+这棵决策树上有多少个叶子，就像有多少个
+
+677
+00:32:36,160 --> 00:32:42,520
+different directions, well, if you're thinking 255,168, you are correct.
+不同的方向，嗯，如果你在想 255,168，你是对的。
+
+678
+00:32:42,520 --> 00:32:44,980
+And now most of us in our lifetime have probably not
+现在，我们大多数人在一生中可能没有
+
+679
+00:32:44,980 --> 00:32:47,180
+played tic-tac-toe that many times.
+玩过那么多次井字棋。
+
+680
+00:32:47,180 --> 00:32:49,660
+So think about how many games you've been missing out on.
+所以想想你错过了多少场比赛。
+
+681
+00:32:49,660 --> 00:32:53,230
+There are different decisions you could have been making all these years.
+这些年来，你本可以做出不同的决定。
+
+682
+00:32:53,230 --> 00:32:57,380
+Now, that's a big number, but honestly, that's not a big number for a computer.
+现在，这是一个很大的数字，但说实话，对于计算机来说，它并不大。
+
+683
+00:32:57,380 --> 00:33:01,420
+That's a few megabytes of memory maybe, to keep all of that in mind
+也许只需要几兆字节的内存，就可以将所有这些内容都牢记在心
+
+684
+00:33:01,420 --> 00:33:06,160
+and implement that kind of code in C or Java or C++ or something else.
+并在 C、Java 或 C++ 等等其他语言中实现这种代码。
+
+685
+00:33:06,160 --> 00:33:08,990
+But other games are much more complicated.
+但其他游戏要复杂得多。
+
+686
+00:33:08,990 --> 00:33:11,860
+And the games that you and I might play as we get older,
+而你我可能随着年龄的增长而玩的游戏，
+
+687
+00:33:11,860 --> 00:33:13,330
+they include maybe chess.
+可能包括国际象棋。
+
+688
+00:33:13,330 --> 00:33:17,560
+And if you think about chess with only the first four moves, back and forth
+如果你想想国际象棋的前四步，来回
+
+689
+00:33:17,560 --> 00:33:19,750
+four times, so only four moves.
+四次，所以只有四步。
+
+690
+00:33:19,750 --> 00:33:21,430
+That's not even a very long game.
+这甚至不是一场很长的比赛。
+
+691
+00:33:21,430 --> 00:33:23,830
+Anyone want a ballpark how many different ways
+有人想大概估计一下有多少种不同的方式
+
+692
+00:33:23,830 --> 00:33:28,390
+there are to begin a game of chess with four moves back and forth?
+可以开始一场有四步来回的国际象棋比赛？
+
+693
+00:33:31,490 --> 00:33:34,300
+This is evidence as to why chess is apparently so hard.
+这就是国际象棋如此难的原因。
+
+694
+00:33:34,300 --> 00:33:40,030
+288 million ways, which is why when you are really good at chess,
+2.88 亿种方式，所以当你真的擅长下国际象棋时，
+
+695
+00:33:40,030 --> 00:33:41,680
+you are really good at chess.
+你真的擅长下国际象棋。
+
+696
+00:33:41,680 --> 00:33:44,350
+Because apparently, you either have an intuition for
+因为显然，你要么有直觉，要么有
+
+697
+00:33:44,350 --> 00:33:47,950
+or a mind for thinking it would seem so many more steps ahead
+或者说，它拥有一个思维超前的思维模式，可以比对手多出很多步。
+
+698
+00:33:47,950 --> 00:33:48,860
+than your opponent.
+比你的对手多出很多步。
+
+699
+00:33:48,860 --> 00:33:50,777
+And don't get us started on something like Go.
+更不要说像围棋这样复杂的游戏了。
+
+700
+00:33:50,777 --> 00:33:55,570
+266 quintillion ways to play Go's first four moves.
+围棋开局前四步就有 266 亿亿种下法。
+
+701
+00:33:55,570 --> 00:33:59,110
+So at this point, we just can't pull out our Mac, our PC,
+所以现在，我们无法拿出我们的 Mac，我们的 PC，
+
+702
+00:33:59,110 --> 00:34:03,190
+certainly not our phone, to solve optimally games like chess and Go,
+更别提用我们的手机来最优地解决像棋和围棋这样的游戏了，
+
+703
+00:34:03,190 --> 00:34:05,323
+because we don't have big enough CPUs.
+因为我们没有足够大的 CPU。
+
+704
+00:34:05,323 --> 00:34:06,490
+We don't have enough memory.
+我们没有足够的内存。
+
+705
+00:34:06,490 --> 00:34:09,610
+We don't have enough years in our lifetimes for the computers
+我们一生中也没有足够的时间让计算机
+
+706
+00:34:09,610 --> 00:34:11,110
+to crunch all of those numbers.
+处理完所有这些数字。
+
+707
+00:34:11,110 --> 00:34:14,230
+And thus was born a different form of AI that's
+于是，另一种形式的人工智能诞生了，它
+
+708
+00:34:14,230 --> 00:34:18,520
+more inspired by finding patterns more dynamically,
+更倾向于动态地寻找模式，
+
+709
+00:34:18,520 --> 00:34:22,239
+learning from data, as opposed to being told by humans, here
+从数据中学习，而不是像以前那样由人类告诉它，这里
+
+710
+00:34:22,239 --> 00:34:25,070
+is the code via which to solve this problem.
+就是用来解决这个问题的代码。
+
+711
+00:34:25,070 --> 00:34:28,330
+So machine learning is a subset of artificial intelligence
+所以机器学习是人工智能的一个分支，
+
+712
+00:34:28,330 --> 00:34:30,980
+that tries instead to get machines to learn
+它试图让机器学习
+
+713
+00:34:30,980 --> 00:34:35,900
+what they should do without being so coached step by step by step by humans
+它们应该做什么，而不是像以前那样由人类一步一步地指导。
+
+714
+00:34:35,900 --> 00:34:36,409
+here.
+这里。
+
+715
+00:34:36,409 --> 00:34:39,500
+Reinforcement learning, for instance, is one such example thereof,
+例如，强化学习就是其中一个例子，
+
+716
+00:34:39,500 --> 00:34:41,690
+wherein reinforcement learning, you sort of wait
+在强化学习中，你需要等待
+
+717
+00:34:41,690 --> 00:34:44,480
+for the computer or maybe a robot to maybe just get
+计算机或机器人慢慢地变得
+
+718
+00:34:44,480 --> 00:34:46,380
+better and better and better at things.
+越来越擅长做一些事情。
+
+719
+00:34:46,380 --> 00:34:48,710
+And as it does, you reward it with a reward function.
+当它做得好时，你就用奖励函数奖励它。
+
+720
+00:34:48,710 --> 00:34:50,960
+Give it plus 1 every time it does something well.
+每次它做得好就奖励它 +1。
+
+721
+00:34:50,960 --> 00:34:51,830
+And maybe minus 1.
+如果它做不好就惩罚它 -1。
+
+722
+00:34:51,830 --> 00:34:54,080
+You punish it any time it does something poorly.
+如果你简单地给这个 AI 或机器人编程，让它最大限度地提高自己的得分，
+
+723
+00:34:54,080 --> 00:35:00,110
+And if you simply program this AI or this robot to maximize its score,
+不要考虑最小化，而是最大化它的得分，
+
+724
+00:35:00,110 --> 00:35:02,390
+never mind minimizing, maximize its score,
+不要考虑最小化，而是最大化它的得分，
+
+725
+00:35:02,390 --> 00:35:05,570
+ideally, it should repeat behaviors that got it plus 1.
+它应该重复那些让它得到 +1 的行为。
+
+726
+00:35:05,570 --> 00:35:07,820
+It should decrease the frequency with which it does
+它应该减少那些让它得到 -1 的不良行为的频率。
+
+727
+00:35:07,820 --> 00:35:09,710
+bad behaviors that got it negative 1.
+它应该减少那些让它得到 -1 的不良行为的频率。
+
+728
+00:35:09,710 --> 00:35:12,080
+And you can reinforce this kind of learning.
+你可以强化这种学习。
+
+729
+00:35:12,080 --> 00:35:15,230
+In fact, I have here one demonstration.
+事实上，我这里有一个演示。
+
+730
+00:35:15,230 --> 00:35:18,380
+Could a student come on up who does not think
+有没有同学觉得自己不怎么协调，
+
+731
+00:35:18,380 --> 00:35:20,960
+they are particularly coordinated?
+如果你……好吧，你的朋友们提名了你。
+
+732
+00:35:20,960 --> 00:35:24,020
+If-- OK, wow, you're being nominated by your friends.
+如果你……好吧，你的朋友们提名了你。
+
+733
+00:35:24,020 --> 00:35:24,950
+Come on up.
+上来吧。
+
+734
+00:35:24,950 --> 00:35:26,283
+Come on up.
+上来吧。
+
+735
+00:35:26,283 --> 00:35:28,598
+[LAUGHTER]
+[笑声]
+
+736
+00:35:29,530 --> 00:35:31,720
+Their hands went up instantly for you.
+他们立即举手选了你。
+
+737
+00:35:34,260 --> 00:35:36,290
+OK, what is your name?
+好的，你叫什么名字？
+
+738
+00:35:36,290 --> 00:35:37,420
+AMAKA: My name's Amaka.
+AMAKA：我叫阿玛卡。
+
+739
+00:35:37,420 --> 00:35:39,130
+DAVID J. MALAN: Amaka, do you want to introduce yourself to the world?
+DAVID J. MALAN：阿玛卡，你想向全世界介绍一下自己吗？
+
+740
+00:35:39,130 --> 00:35:40,330
+AMAKA: Hi, my name is Amaka.
+AMAKA：你好，我叫阿玛卡。
+
+741
+00:35:40,330 --> 00:35:42,250
+I am a first year in Holworthy.
+我是一年级学生，住在霍尔沃思宿舍。
+
+742
+00:35:42,250 --> 00:35:43,667
+I'm planning to concentrate in CS.
+我计划专注于计算机科学。
+
+743
+00:35:43,667 --> 00:35:44,750
+DAVID J. MALAN: Wonderful.
+DAVID J. MALAN：很好。
+
+744
+00:35:44,750 --> 00:35:45,550
+Nice to see you.
+很高兴见到你。
+
+745
+00:35:45,550 --> 00:35:46,690
+Come on over here.
+到这边来吧。
+
+746
+00:35:46,690 --> 00:35:49,540
+[APPLAUSE]
+[掌声]
+
+747
+00:35:49,540 --> 00:35:52,900
+So, yes, oh, no, it's sort of like a game show here.
+所以，是的，哦，不，这有点像一个游戏节目。
+
+748
+00:35:52,900 --> 00:35:57,520
+We have a pan here with what appears to be something pancake-like.
+我们这里有一个平底锅，里面似乎是某种像煎饼的东西。
+
+749
+00:35:57,520 --> 00:36:00,970
+And we'd like to teach you how to flip a pancake,
+我们想教你如何翻煎饼，
+
+750
+00:36:00,970 --> 00:36:04,250
+so that when you gesture upward, the pancake should flip around
+这样当你向上示意的时候，煎饼应该翻过来
+
+751
+00:36:04,250 --> 00:36:05,900
+as though you cooked the other side.
+就像你把另一面也煎熟了。
+
+752
+00:36:05,900 --> 00:36:09,400
+So we're going to reward you verbally with plus 1 or minus 1.
+所以我们会用口头奖励你，加 1 或减 1。
+
+753
+00:36:11,980 --> 00:36:13,450
+Minus 1.
+减 1。
+
+754
+00:36:13,450 --> 00:36:15,470
+Minus 1.
+减 1。
+
+755
+00:36:15,470 --> 00:36:17,050
+OK, plus 1!
+好的，加 1！
+
+756
+00:36:17,050 --> 00:36:19,690
+Plus 1, so do more of that.
+加 1，所以多做一些。
+
+757
+00:36:19,690 --> 00:36:20,920
+Minus 1.
+减 1。
+
+758
+00:36:20,920 --> 00:36:22,840
+Minus 1.
+减 1。
+
+759
+00:36:22,840 --> 00:36:23,890
+Minus 1.
+减 1。
+
+760
+00:36:23,890 --> 00:36:25,150
+Do less of that.
+少做一些。
+
+761
+00:36:25,150 --> 00:36:27,370
+[LAUGHTER]
+[笑声]
+
+762
+00:36:27,370 --> 00:36:28,517
+AUDIENCE: Great, great.
+观众：太好了，太好了。
+
+763
+00:36:28,517 --> 00:36:29,600
+DAVID J. MALAN: All right!
+大卫·马兰：好的！
+
+764
+00:36:29,600 --> 00:36:30,655
+A big round of applause.
+热烈的掌声。
+
+765
+00:36:30,655 --> 00:36:32,890
+[APPLAUSE]
+[掌声]
+
+766
+00:36:32,890 --> 00:36:33,670
+Thank you.
+谢谢。
+
+767
+00:36:33,670 --> 00:36:37,340
+We've been in the habit of handing out Super Mario Brothers Oreos this year,
+今年我们一直习惯发放超级马里奥兄弟奥利奥饼干，
+
+768
+00:36:37,340 --> 00:36:39,220
+so thank you for participating.
+感谢您的参与。
+
+769
+00:36:39,220 --> 00:36:41,600
+[APPLAUSE]
+[掌声]
+
+770
+00:36:43,030 --> 00:36:46,590
+So, this is actually a good example of an opportunity
+所以，这实际上是一个很好的机会，
+
+771
+00:36:46,590 --> 00:36:47,940
+for reinforcement learning.
+用于强化学习。
+
+772
+00:36:47,940 --> 00:36:51,310
+And wonderfully, a researcher has posted a video that we thought we'd share.
+妙的是，一位研究人员发布了一段视频，我们想分享一下。
+
+773
+00:36:51,310 --> 00:36:53,060
+It's about a minute and a half long, where
+它大约一分钟半长，在那里
+
+774
+00:36:53,060 --> 00:36:57,570
+you can watch a robot now do exactly what our wonderful human volunteer here
+你现在可以看到一台机器人做着我们这位出色的志愿者所做的事情，
+
+775
+00:36:57,570 --> 00:36:59,050
+just attempted as well.
+也尝试了。
+
+776
+00:36:59,050 --> 00:37:01,560
+So let me go ahead and play this on the screen
+所以让我继续在屏幕上播放它
+
+777
+00:37:01,560 --> 00:37:05,380
+and give you a sense of what the human and the robot are doing together.
+让你了解人机协作做的事情。
+
+778
+00:37:05,380 --> 00:37:08,790
+So their pancake looks a little similar there.
+所以他们的煎饼看起来有点相似。
+
+779
+00:37:08,790 --> 00:37:12,360
+The human here is going to first sort of train the robot what
+这里的人类将首先对机器人进行训练，教它
+
+780
+00:37:12,360 --> 00:37:14,190
+to do by showing it some gestures.
+怎么做，通过展示一些手势。
+
+781
+00:37:14,190 --> 00:37:16,360
+But there's no one right way to do this.
+但是没有一种正确的方法。
+
+782
+00:37:16,360 --> 00:37:19,660
+But the human seems to know how to do it pretty well in this case,
+但在这种情况下，人类似乎知道怎么做得很好，
+
+783
+00:37:19,660 --> 00:37:23,040
+and so it's trying to give the machine examples
+所以它试图给机器一些例子，
+
+784
+00:37:23,040 --> 00:37:24,990
+of how to flip a pancake successfully.
+如何成功地翻煎饼。
+
+785
+00:37:24,990 --> 00:37:27,810
+But now, this is the very first trial.
+但现在，这是第一次尝试。
+
+786
+00:37:27,810 --> 00:37:28,560
+OK, look familiar?
+好的，看起来眼熟吗？
+
+787
+00:37:28,560 --> 00:37:30,300
+You're in good company.
+你并不孤单。
+
+788
+00:37:30,300 --> 00:37:32,652
+After three trials.
+经过三次尝试。
+
+789
+00:37:32,652 --> 00:37:33,456
+[CLANG]
+[金属碰撞声]
+
+790
+00:37:33,456 --> 00:37:34,260
+[PLOP]
+[啪的一声]
+
+791
+00:37:34,260 --> 00:37:36,020
+OK.
+好的。
+
+792
+00:37:36,020 --> 00:37:36,520
+[CLANG]
+[金属碰撞声]
+
+793
+00:37:36,520 --> 00:37:37,410
+[PLOP]
+[啪的一声]
+
+794
+00:37:37,410 --> 00:37:39,060
+OK.
+好的。
+
+795
+00:37:39,060 --> 00:37:42,690
+Now 10 tries.
+现在是 10 次尝试。
+
+796
+00:37:42,690 --> 00:37:46,020
+There's the human picking up the pancake.
+人类拿起煎饼了。
+
+797
+00:37:46,020 --> 00:37:48,780
+After 11 trials--
+在11次尝试之后——
+
+798
+00:37:48,780 --> 00:37:49,680
+[CLANG]
+[金属碰撞声]
+
+799
+00:37:49,680 --> 00:37:51,930
+[PLOP]
+[沉闷的坠落声]
+
+800
+00:37:51,930 --> 00:37:54,270
+And meanwhile, there's presumably a human coding this,
+同时，可以推测有人在编写代码，
+
+801
+00:37:54,270 --> 00:38:00,090
+in the sense that someone is saying good job or bad job, plus 1 or minus 1.
+也就是说有人在说“做得好”或“做得不好”，加1或减1。
+
+802
+00:38:00,090 --> 00:38:03,870
+20 trials.
+20次尝试。
+
+803
+00:38:03,870 --> 00:38:07,440
+Here now we'll see how the computer knows what it's even doing.
+现在，我们将看到计算机是如何知道它在做什么的。
+
+804
+00:38:07,440 --> 00:38:10,720
+There's just a mapping to some kind of XYZ coordinate system.
+它只是映射到某种 XYZ 坐标系。
+
+805
+00:38:10,720 --> 00:38:13,260
+So the robot can quantize what it is it's doing.
+因此，机器人可以量化它的动作。
+
+806
+00:38:13,260 --> 00:38:14,100
+Nice!
+不错！
+
+807
+00:38:14,100 --> 00:38:16,447
+To do more of one thing, less of another.
+做更多的事情，减少另一件事。
+
+808
+00:38:16,447 --> 00:38:18,780
+And you're just seeing a visualization in the background
+你只是看到背景中的可视化
+
+809
+00:38:18,780 --> 00:38:21,720
+of those digitized movements.
+那些数字化的动作。
+
+810
+00:38:21,720 --> 00:38:28,020
+And so now, after 50 some odd trials, the robot, too, has got it spot on.
+因此，现在经过了50多次尝试之后，机器人也做对了。
+
+811
+00:38:28,020 --> 00:38:30,420
+And it should be able to repeat this again and again
+它应该能够一遍又一遍地重复这个动作
+
+812
+00:38:30,420 --> 00:38:33,000
+and again, in order to keep flipping this pancake.
+一遍又一遍，为了不断翻转这个煎饼。
+
+813
+00:38:33,000 --> 00:38:36,360
+So our human volunteer wonderfully took you even fewer trials.
+所以我们的人类志愿者用更少的尝试次数就做到了。
+
+814
+00:38:36,360 --> 00:38:38,340
+But this is an example then, to be clear,
+但这是一个例子，需要澄清的是，
+
+815
+00:38:38,340 --> 00:38:40,800
+of what we'd call reinforcement learning,
+我们称之为强化学习，
+
+816
+00:38:40,800 --> 00:38:44,725
+whereby you're reinforcing a behavior you want or negatively reinforcing.
+即强化你想要的行为或负面强化。
+
+817
+00:38:44,725 --> 00:38:46,600
+That is, punishing a behavior that you don't.
+也就是说，惩罚你不想要的行为。
+
+818
+00:38:46,600 --> 00:38:48,350
+Here's another example that brings us back
+这里还有一个例子，它把我们带回到
+
+819
+00:38:48,350 --> 00:38:51,850
+into the realm of games a little bit, but in a very abstract way.
+游戏领域，但以一种非常抽象的方式。
+
+820
+00:38:51,850 --> 00:38:53,918
+If we were playing a game like The Floor Is Lava,
+如果我们在玩“地板是熔岩”的游戏，
+
+821
+00:38:53,918 --> 00:38:56,710
+where you're only supposed to step certain places so that you don't
+你应该只踩某些地方，这样你就不会
+
+822
+00:38:56,710 --> 00:38:59,585
+fall straight in the lava pit or something like that and lose a point
+直接掉进熔岩坑或类似的地方，然后失去一分
+
+823
+00:38:59,585 --> 00:39:02,920
+or lose a life, each of these squares might represent a position.
+或者失去一命，这些方格可能代表一个位置。
+
+824
+00:39:02,920 --> 00:39:06,470
+This yellow dot might represent the human player that can go up, down,
+这个黄点可能代表人类玩家，可以向上、向下、
+
+825
+00:39:06,470 --> 00:39:08,240
+left or right within this world.
+向左或向右移动。
+
+826
+00:39:08,240 --> 00:39:11,170
+I'm revealing to the whole audience where the lava pits are.
+我向所有观众展示了熔岩坑的位置。
+
+827
+00:39:11,170 --> 00:39:13,930
+But the goal for this yellow dot is to get to green.
+但这个黄点的目标是到达绿色。
+
+828
+00:39:13,930 --> 00:39:17,530
+But the yellow dot, as in any good game, does not have this bird's eye view
+但就像任何一款好游戏一样，这个黄点没有上帝视角
+
+829
+00:39:17,530 --> 00:39:19,930
+and knows from the get-go exactly where to go.
+并且一开始就清楚地知道该去哪里。
+
+830
+00:39:19,930 --> 00:39:22,040
+It's going to have to try some trial and error.
+它将不得不尝试一些试错。
+
+831
+00:39:22,040 --> 00:39:25,300
+But if we, the programmers, maybe reinforce good behavior
+但如果我们，程序员，可能强化好的行为
+
+832
+00:39:25,300 --> 00:39:28,810
+or punish bad behavior, we can teach this yellow dot,
+或者惩罚不好的行为，我们可以教导这个黄点，
+
+833
+00:39:28,810 --> 00:39:31,550
+without giving it step by step, up, down,
+不用一步一步地教它向上、向下、
+
+834
+00:39:31,550 --> 00:39:34,600
+left, right instructions, what behaviors to repeat
+向左、向右的指令，哪些行为要重复
+
+835
+00:39:34,600 --> 00:39:36,460
+and what behaviors not to repeat.
+哪些行为不要重复。
+
+836
+00:39:36,460 --> 00:39:38,665
+So, for instance, suppose the robot moves right.
+例如，假设机器人向右移动。
+
+837
+00:39:38,665 --> 00:39:39,520
+Ah, that was bad.
+啊，那很糟糕。
+
+838
+00:39:39,520 --> 00:39:42,610
+You fell in the lava already, so we'll use a bit of computer memory
+你已经掉进熔岩了，所以我们会使用一些计算机内存
+
+839
+00:39:42,610 --> 00:39:45,100
+to draw a thicker red line there.
+在那里画一条更粗的红线。
+
+840
+00:39:45,100 --> 00:39:46,220
+Don't do that again.
+不要再那样做了。
+
+841
+00:39:46,220 --> 00:39:47,830
+So, negative 1, so to speak.
+所以，可以说是负1。
+
+842
+00:39:47,830 --> 00:39:49,780
+Maybe the yellow dot moves up next time.
+也许黄点下次会向上移动。
+
+843
+00:39:49,780 --> 00:39:53,290
+We can reward that behavior by not drawing any walls
+我们可以通过不画任何墙壁来奖励这种行为
+
+844
+00:39:53,290 --> 00:39:54,580
+and allowing it to go again.
+并允许它再次移动。
+
+845
+00:39:54,580 --> 00:39:57,970
+It's making pretty good progress, but, oh, darn it, it took a right turn
+它取得了相当大的进展，但，哎呀，它向右转了。
+
+846
+00:39:57,970 --> 00:39:59,230
+and now fell into the lava.
+现在掉入了熔岩之中。
+
+847
+00:39:59,230 --> 00:40:01,490
+But let's use a bit more of the computer's memory
+但让我们使用更多计算机的内存
+
+848
+00:40:01,490 --> 00:40:04,750
+and keep track of the, OK, do not do that thing anymore.
+并跟踪，好的，不要再那样做了。
+
+849
+00:40:04,750 --> 00:40:07,270
+Maybe the next time the human dot goes this way.
+也许下次人类点朝这边走的时候
+
+850
+00:40:07,270 --> 00:40:09,370
+Oh, we want to punish that behavior, so we'll
+哦，我们想要惩罚这种行为，所以我们将
+
+851
+00:40:09,370 --> 00:40:11,140
+remember as much with that red line.
+用那条红线记住这一点。
+
+852
+00:40:11,140 --> 00:40:15,040
+But now we're starting to make progress until, oh, now we hit this one.
+但现在我们开始取得进展，直到，哦，现在我们撞到了这个。
+
+853
+00:40:15,040 --> 00:40:18,340
+And eventually, even though the yellow dot, much like our human,
+最终，即使黄点，就像我们人类一样，
+
+854
+00:40:18,340 --> 00:40:22,780
+much like our pancake flipping robot had to try again and again and again,
+就像我们的煎饼翻转机器人一样，不得不一次又一次地尝试，
+
+855
+00:40:22,780 --> 00:40:26,710
+after enough trials, it's going to start to realize what behaviors it should
+经过足够多的尝试，它将开始意识到它应该
+
+856
+00:40:26,710 --> 00:40:28,880
+repeat and which ones it shouldn't.
+重复哪些，哪些不应该重复。
+
+857
+00:40:28,880 --> 00:40:32,740
+And so in this case, maybe it finally makes its way up to the green dot.
+因此在这种情况下，也许它最终到达了绿点。
+
+858
+00:40:32,740 --> 00:40:35,050
+And just to recap, once it finds that path,
+再说一次，一旦它找到了那条路，
+
+859
+00:40:35,050 --> 00:40:38,620
+now it can remember it forever as with these green thicker lines.
+现在它可以用这些更粗的绿线永远记住它。
+
+860
+00:40:38,620 --> 00:40:41,470
+Any time you want to leave this map, any time you get really good
+任何时候你想离开这张地图，任何时候你变得非常熟练
+
+861
+00:40:41,470 --> 00:40:44,650
+at the Nintendo game, you follow that same path again and again,
+玩任天堂游戏，你就一遍又一遍地沿着同一条路走，
+
+862
+00:40:44,650 --> 00:40:46,420
+so you don't fall into the lava.
+这样你就不会掉进熔岩里。
+
+863
+00:40:46,420 --> 00:40:51,160
+But an astute human observer might realize that, yes, this is correct.
+但一个敏锐的人类观察者可能会意识到，是的，这是正确的。
+
+864
+00:40:51,160 --> 00:40:53,590
+It's getting out of this so-called maze.
+它正在走出这个所谓的迷宫。
+
+865
+00:40:53,590 --> 00:40:56,315
+But what is suboptimal or bad about this solution?
+但是这个解决方案有什么不理想或不好的地方呢？
+
+866
+00:40:56,315 --> 00:40:56,815
+Sure.
+当然。
+
+867
+00:40:56,815 --> 00:40:58,513
+AUDIENCE: It's taking a really long time.
+观众：这花费了很长时间。
+
+868
+00:40:58,513 --> 00:40:59,900
+It's not the most efficient way to get there.
+这不是到达那里的最有效方法。
+
+869
+00:40:59,900 --> 00:41:00,500
+DAVID J. MALAN: Exactly.
+大卫·J·马兰：没错。
+
+870
+00:41:00,500 --> 00:41:01,792
+It's taking a really long time.
+这花费了很长时间。
+
+871
+00:41:01,792 --> 00:41:04,190
+An inefficient way to get there, because I dare say,
+一种到达那里的低效方法，因为我敢说，
+
+872
+00:41:04,190 --> 00:41:07,280
+if we just tried a different path occasionally,
+如果我们偶尔尝试一条不同的路径，
+
+873
+00:41:07,280 --> 00:41:11,480
+maybe we could get lucky and get to the exit quicker.
+也许我们会幸运地更快地到达出口。
+
+874
+00:41:11,480 --> 00:41:14,930
+And maybe that means we get a higher score or we get rewarded even more.
+也许这意味着我们会得到更高的分数或获得更多的奖励。
+
+875
+00:41:14,930 --> 00:41:18,140
+So within a lot of artificial intelligence algorithms,
+所以在很多人工智能算法中，
+
+876
+00:41:18,140 --> 00:41:21,230
+there's this idea of exploring versus exploiting,
+有一个探索与利用的概念，
+
+877
+00:41:21,230 --> 00:41:26,000
+whereby you should occasionally, yes, exploit the knowledge you already have.
+也就是说，你应该偶尔，是的，利用你已经拥有的知识。
+
+878
+00:41:26,000 --> 00:41:28,010
+And in fact, frequently exploit that knowledge.
+事实上，要经常利用这种知识。
+
+879
+00:41:28,010 --> 00:41:30,260
+But occasionally you know what you should probably do,
+但偶尔你知道你应该做的是，
+
+880
+00:41:30,260 --> 00:41:31,550
+is explore just a little bit.
+稍微探索一下。
+
+881
+00:41:31,550 --> 00:41:34,550
+Take a left instead of a right and see if it leads you to the solution
+向左转而不是向右转，看看它是否能更快地带你找到解决方案
+
+882
+00:41:34,550 --> 00:41:35,390
+even more quickly.
+更快地找到解决方案。
+
+883
+00:41:35,390 --> 00:41:37,620
+And you might find a better and better solution.
+你可能会找到越来越好的解决方案。
+
+884
+00:41:37,620 --> 00:41:40,100
+So here mathematically is how we might think of this.
+所以从数学的角度来看，我们可以这样想。
+
+885
+00:41:40,100 --> 00:41:44,690
+10% of the time we might say that epsilon, just some variable, sort
+我们可能会说，10% 的时间，ε，只是一个变量，排序
+
+886
+00:41:44,690 --> 00:41:47,780
+of a sprinkling of salt into the algorithm here, epsilon
+一种撒入算法中的盐，ε
+
+887
+00:41:47,780 --> 00:41:49,320
+will be like 10% of the time.
+将会是 10% 的时间。
+
+888
+00:41:49,320 --> 00:41:54,512
+So if my robot or my player picks a random number that's less than 10%,
+所以如果我的机器人或我的玩家选择了一个小于 10% 的随机数，
+
+889
+00:41:54,512 --> 00:41:55,970
+that's going to make a random move.
+它将做出随机移动。
+
+890
+00:41:55,970 --> 00:41:59,270
+Go left instead of right, even if you really typically go right.
+向左转而不是向右转，即使你通常都是向右转。
+
+891
+00:41:59,270 --> 00:42:01,650
+Otherwise, guys make the move with the highest value,
+否则，我们会做出价值最高的移动，
+
+892
+00:42:01,650 --> 00:42:03,090
+as we've learned over time.
+正如我们随着时间推移所学到的那样。
+
+893
+00:42:03,090 --> 00:42:06,420
+And what the robot might learn then, is that we could actually
+机器人可能会学到的是，我们实际上可以
+
+894
+00:42:06,420 --> 00:42:10,290
+go via this path, which gets us to the output faster.
+通过这条路径，让我们更快地得到输出。
+
+895
+00:42:10,290 --> 00:42:13,313
+We get a higher score, we do it in less time, it's a win-win.
+我们获得了更高的分数，而且用时更短，这是双赢的。
+
+896
+00:42:13,313 --> 00:42:15,480
+Frankly, this really resonates with me, because I've
+坦率地说，这真的引起了我的共鸣，因为我
+
+897
+00:42:15,480 --> 00:42:19,068
+been in the habit, as maybe some of you are, when you go to a restaurant maybe
+像你们中有些人一样，习惯了，当你也许去一家餐馆的时候
+
+898
+00:42:19,068 --> 00:42:21,360
+that you really like, you find a dish you really like--
+你真的很喜欢，你发现一道你真的很喜欢的菜--
+
+899
+00:42:21,360 --> 00:42:24,120
+--I will never again know what other dishes that restaurant
+--我再也不会知道那家餐厅的其他菜是什么了
+
+900
+00:42:24,120 --> 00:42:28,440
+offers, because I'm locally optimally happy with the dish I've chosen.
+提供，因为我对选择的菜感到很满意。
+
+901
+00:42:28,440 --> 00:42:31,800
+And I will never know if there's an even better dish at that restaurant
+而且我永远不会知道那家餐馆里是否还有更好的菜
+
+902
+00:42:31,800 --> 00:42:34,320
+unless again, I sort of sprinkle a little bit of epsilon,
+除非我又，在我的游戏中加点ε，
+
+903
+00:42:34,320 --> 00:42:38,730
+a little bit of randomness into my game playing, my dining out.
+在我的用餐中，加入一点随机性。
+
+904
+00:42:38,730 --> 00:42:41,640
+The catch, of course, though, is that I might be punished.
+当然，问题是，我可能会受到惩罚。
+
+905
+00:42:41,640 --> 00:42:45,360
+I might, therefore, be less happy if I pick something and I don't like it.
+因此，如果我选了我不喜欢的，我可能会不那么高兴。
+
+906
+00:42:45,360 --> 00:42:48,120
+So there's this tension between exploring and exploiting.
+因此，探索和利用之间存在着这种张力。
+
+907
+00:42:48,120 --> 00:42:50,700
+But in general in computer science, and especially in AI,
+但总的来说，在计算机科学中，尤其是在人工智能中，
+
+908
+00:42:50,700 --> 00:42:53,220
+adding a little bit of randomness, especially over time,
+添加一点随机性，尤其是在一段时间内，
+
+909
+00:42:53,220 --> 00:42:56,320
+can, in fact, yield better and better outcomes.
+实际上可以带来越来越好的结果。
+
+910
+00:42:56,320 --> 00:42:59,400
+But now there's this notion all the more of deep learning,
+但现在，深度学习的概念更加突出了，
+
+911
+00:42:59,400 --> 00:43:02,910
+whereby you're trying to infer, to detect patterns,
+它试图推断，检测模式，
+
+912
+00:43:02,910 --> 00:43:06,120
+figure out how to solve problems, even if the AI has never
+找出解决问题的办法，即使人工智能以前从未
+
+913
+00:43:06,120 --> 00:43:10,170
+seen those problems before, and even if there's no human there to reinforce
+见过这些问题，即使没有人类在那里强化
+
+914
+00:43:10,170 --> 00:43:12,720
+positive or negatively behavior.
+正面或负面的行为。
+
+915
+00:43:12,720 --> 00:43:15,390
+Maybe it's just too complex of a problem for a human
+也许对于人类来说，这只是一个过于复杂的问题
+
+916
+00:43:15,390 --> 00:43:18,415
+to stand alongside the robot and say, good or bad job.
+站在机器人旁边说，做得好还是做错了。
+
+917
+00:43:18,415 --> 00:43:20,790
+So with deep learning, they're actually very much related
+所以深度学习，它们实际上与
+
+918
+00:43:20,790 --> 00:43:24,210
+to what you might know as neural networks, inspired by human physiology,
+你可能知道的，神经网络，受人类生理学的启发，
+
+919
+00:43:24,210 --> 00:43:26,580
+whereby inside of our brains and elsewhere in our body,
+在我们的脑部和其他身体部位，
+
+920
+00:43:26,580 --> 00:43:28,372
+there's lots of these neurons here that can
+有很多神经元，它们可以
+
+921
+00:43:28,372 --> 00:43:30,480
+send electrical signals to make movements
+发送电信号，让动作
+
+922
+00:43:30,480 --> 00:43:32,220
+happen from brain to extremities.
+从大脑到四肢发生。
+
+923
+00:43:32,220 --> 00:43:35,520
+You might have two of these via which signals can
+你可能有两个，信号可以
+
+924
+00:43:35,520 --> 00:43:37,810
+be transmitted over a larger distance.
+通过更远的距离传输。
+
+925
+00:43:37,810 --> 00:43:41,760
+And so computer scientists for some time have drawn inspiration
+因此，计算机科学家已经从这些神经元中获得灵感
+
+926
+00:43:41,760 --> 00:43:46,560
+from these neurons to create in software, what we call neural networks.
+很长一段时间了，他们在软件中创建了我们称之为神经网络的东西。
+
+927
+00:43:46,560 --> 00:43:49,240
+Whereby, there's inputs to these networks
+其中，这些网络有输入
+
+928
+00:43:49,240 --> 00:43:52,230
+and there's outputs from these networks that represents inputs
+以及这些网络的输出，它们代表输入
+
+929
+00:43:52,230 --> 00:43:54,450
+to problems and solutions thereto.
+到问题及其解决方案。
+
+930
+00:43:54,450 --> 00:43:56,910
+So let me abstract away the more biological diagrams
+所以让我抽象掉更生物的图表
+
+931
+00:43:56,910 --> 00:44:00,970
+with just circles that represent nodes, or neurons, in this case.
+只用圆圈来代表节点，或者说是神经元，在这种情况下。
+
+932
+00:44:00,970 --> 00:44:03,450
+This we would call in CS50, the input.
+在CS50中，我们称之为输入。
+
+933
+00:44:03,450 --> 00:44:05,520
+This is what we would call the output.
+这就是我们所说的输出。
+
+934
+00:44:05,520 --> 00:44:08,680
+But this is a very simplistic, a very simple neural network.
+但这只是一个非常简单的，非常简单的，神经网络。
+
+935
+00:44:08,680 --> 00:44:11,760
+This might be more common, whereby the network, the AI
+这可能是更常见的情况，网络，人工智能
+
+936
+00:44:11,760 --> 00:44:15,900
+takes two inputs to a problem and tries to give you one solution.
+将两个输入到一个问题，并试图给你一个解决方案。
+
+937
+00:44:15,900 --> 00:44:17,760
+Well, let's make this more real.
+好吧，让我们让它更真实一些。
+
+938
+00:44:17,760 --> 00:44:20,760
+For instance, suppose that at the--
+例如，假设在…
+
+939
+00:44:20,760 --> 00:44:23,970
+suppose that just for the sake of discussion, here is like a grid
+假设，为了讨论起见，这里有一个网格
+
+940
+00:44:23,970 --> 00:44:27,180
+that you might see in math class, with a y-axis and an x-axis, vertically
+你可能在数学课上看到过，有一个纵向的 y 轴和横向的 x 轴
+
+941
+00:44:27,180 --> 00:44:28,620
+and horizontally respectively.
+以及水平方向。
+
+942
+00:44:28,620 --> 00:44:31,980
+Suppose there's a couple of blue and red dots in that world.
+假设在这个世界里有一些蓝点和红点。
+
+943
+00:44:31,980 --> 00:44:34,890
+And suppose that our goal, computationally,
+假设我们的目标，从计算的角度来说，
+
+944
+00:44:34,890 --> 00:44:40,020
+is to predict whether a dot is going to be blue or red, based
+是预测一个点会是蓝色还是红色，基于
+
+945
+00:44:40,020 --> 00:44:42,960
+on its position within that coordinate system.
+它在坐标系中的位置。
+
+946
+00:44:42,960 --> 00:44:45,002
+And maybe this represents some real world notion.
+也许这代表着某种现实世界的概念。
+
+947
+00:44:45,002 --> 00:44:47,502
+Maybe it's something like rain that we're trying to predict.
+也许是我们要预测的降雨量。
+
+948
+00:44:47,502 --> 00:44:49,920
+But we're doing it more simply with colors right now.
+但我们现在用颜色来简化它。
+
+949
+00:44:49,920 --> 00:44:53,010
+So here's my y-axis, here's my x-axis, and effectively,
+所以这是我的 y 轴，这是我的 x 轴，实际上，
+
+950
+00:44:53,010 --> 00:44:55,740
+my neural network you can think of conceptually as this.
+你可以将我的神经网络从概念上理解为这样。
+
+951
+00:44:55,740 --> 00:44:58,393
+It's some kind of implementation of software
+它是一种软件实现方式
+
+952
+00:44:58,393 --> 00:45:00,060
+where there's two inputs to the problem.
+它有两个输入。
+
+953
+00:45:00,060 --> 00:45:01,990
+Give me an x, give me a y value.
+给我一个 x 值，给我一个 y 值。
+
+954
+00:45:01,990 --> 00:45:06,540
+And this neural network will output red or blue as its prediction.
+而这个神经网络会输出红色或蓝色作为它的预测结果。
+
+955
+00:45:06,540 --> 00:45:08,790
+Well, how does it know whether to predict red or blue,
+那么，它怎么知道该预测红色还是蓝色呢？
+
+956
+00:45:08,790 --> 00:45:12,030
+especially if no human has painstakingly written code
+尤其是当没有人费力地写代码
+
+957
+00:45:12,030 --> 00:45:15,360
+to say when you see a dot here, conclude that it's red.
+来说明当你看到这里有一个点时，就断定它是红色的。
+
+958
+00:45:15,360 --> 00:45:17,490
+When you see a dot here, conclude that it's blue.
+当你看到这里有一个点时，就断定它是蓝色的。
+
+959
+00:45:17,490 --> 00:45:21,160
+How can an AI just learn dynamically to solve problems?
+人工智能怎么能动态地学习解决问题？
+
+960
+00:45:21,160 --> 00:45:23,460
+Well, what might be a reasonable heuristic here?
+那么，这里可能有一个合理的启发式算法？
+
+961
+00:45:23,460 --> 00:45:26,757
+Honestly, this is probably a first approximation that's pretty good.
+老实说，这可能是一个相当好的初步近似。
+
+962
+00:45:26,757 --> 00:45:29,340
+If anything's to the left of that line, let the neural network
+如果任何东西在直线的左边，就让神经网络
+
+963
+00:45:29,340 --> 00:45:30,630
+conclude that it's going to be blue.
+断定它会是蓝色的。
+
+964
+00:45:30,630 --> 00:45:32,010
+And if it's to the right of the line, let
+如果在直线的右边，就让
+
+965
+00:45:32,010 --> 00:45:33,593
+it conclude that it's going to be red.
+它断定它会是红色的。
+
+966
+00:45:33,593 --> 00:45:36,690
+Until such time as there's more training data,
+直到有更多的训练数据，
+
+967
+00:45:36,690 --> 00:45:40,203
+more real world data that gets us to rethink our assumptions.
+更多来自现实世界的数据让我们重新思考我们的假设。
+
+968
+00:45:40,203 --> 00:45:42,120
+So for instance, if there's a third dot there,
+例如，如果那里有一个第三个点，
+
+969
+00:45:42,120 --> 00:45:44,830
+uh-oh, clearly a straight line is not sufficient.
+哦，显然一条直线是不够的。
+
+970
+00:45:44,830 --> 00:45:48,960
+So maybe it's more of a diagonal line that splits the blue from the red world
+所以可能它更像是一条斜线，将蓝色世界和红色世界分隔开来
+
+971
+00:45:48,960 --> 00:45:49,600
+here.
+这里。
+
+972
+00:45:49,600 --> 00:45:51,660
+Meanwhile, here's even more dots.
+同时，这里还有更多点。
+
+973
+00:45:51,660 --> 00:45:53,580
+And it's actually getting harder now.
+而现在它实际上变得更难了。
+
+974
+00:45:53,580 --> 00:45:55,230
+Like, this line is still pretty good.
+比如，这条线仍然很好。
+
+975
+00:45:55,230 --> 00:45:56,610
+Most of the blue is up here.
+大部分蓝色在上面。
+
+976
+00:45:56,610 --> 00:45:58,240
+Most of the red is down here.
+大部分红色在下面。
+
+977
+00:45:58,240 --> 00:46:02,100
+And this is why, if we fast forward to today, you know, AI is often very good,
+这就是为什么，如果我们快进到今天，你知道，人工智能通常很好，
+
+978
+00:46:02,100 --> 00:46:04,630
+but not perfect at solving problems.
+但它并不完美地解决问题。
+
+979
+00:46:04,630 --> 00:46:07,890
+But what is it we're looking at here, and what is this neural network really
+但我们在这里看的是什么，这个神经网络到底在做什么？
+
+980
+00:46:07,890 --> 00:46:09,250
+trying to figure out?
+试图弄明白？
+
+981
+00:46:09,250 --> 00:46:12,870
+Well, again, at the risk of taking some fun out of red and blue dots,
+好吧，再次冒着剥夺红点和蓝点乐趣的风险，
+
+982
+00:46:12,870 --> 00:46:16,890
+you can think of this neural network as indeed having these neurons, which
+你可以将这个神经网络理解为确实拥有这些神经元，它们
+
+983
+00:46:16,890 --> 00:46:19,590
+represent inputs here and outputs here.
+代表着这里的输入和这里的输出。
+
+984
+00:46:19,590 --> 00:46:22,200
+And then what's happening inside of the computer's memory,
+然后，计算机内存中发生了什么？
+
+985
+00:46:22,200 --> 00:46:26,320
+is that it's trying to figure out what the weight of this arrow or edge
+它试图找出这条箭头或边的权重是多少
+
+986
+00:46:26,320 --> 00:46:26,820
+should be.
+应该是什么。
+
+987
+00:46:26,820 --> 00:46:29,132
+What the weight of this arrow or edge should be.
+这条箭头或边的权重应该是什么。
+
+988
+00:46:29,132 --> 00:46:30,840
+And maybe there's another variable there,
+也许那里还有另一个变量，
+
+989
+00:46:30,840 --> 00:46:33,910
+like plus or minus C that just tweaks the prediction.
+就像加或减C，它只是微调预测。
+
+990
+00:46:33,910 --> 00:46:37,540
+So x and y are literally going to be numbers in this scenario.
+所以，在这个场景中，x 和 y 实际上将是数字。
+
+991
+00:46:37,540 --> 00:46:40,890
+And the output of this neural network ideally is just true or false.
+这个神经网络的输出理想情况下只是真或假。
+
+992
+00:46:40,890 --> 00:46:42,310
+Is it red or blue?
+它是红色还是蓝色？
+
+993
+00:46:42,310 --> 00:46:45,330
+So it's sort of a binary state, as we discuss a lot in CS50.
+所以，它是一种二元状态，我们在 CS50 中讨论过很多次。
+
+994
+00:46:45,330 --> 00:46:47,987
+So here too, to take the fun out of the pretty picture,
+所以在这里，为了让这幅漂亮的图片不那么有趣，
+
+995
+00:46:47,987 --> 00:46:50,070
+it's really just like a high school math function.
+它实际上就像高中数学函数。
+
+996
+00:46:50,070 --> 00:46:53,160
+What the neural network in this example is trying to figure out,
+在这个例子中，神经网络试图弄清楚，
+
+997
+00:46:53,160 --> 00:46:57,540
+is what formula of the form ax plus by plus c
+什么样的公式形式为 ax 加 by 加 c
+
+998
+00:46:57,540 --> 00:46:59,680
+is going to be arbitrarily greater than 0?
+将任意大于 0？
+
+999
+00:46:59,680 --> 00:47:02,150
+And if so, let's conclude that the dot is red
+如果是这样，让我们得出结论，这个点是红色的
+
+1000
+00:47:02,150 --> 00:47:05,140
+if you get back a positive result. If you don't, let's
+如果你得到一个正的结果。如果你没有，让我们
+
+1001
+00:47:05,140 --> 00:47:08,558
+conclude that the dot is going to be blue instead.
+得出结论，这个点将是蓝色的。
+
+1002
+00:47:08,558 --> 00:47:10,600
+So really what you're trying to do, is figure out
+所以，你真正想做的是找出
+
+1003
+00:47:10,600 --> 00:47:13,000
+dynamically what numbers do we have to tweak,
+我们必须动态地调整哪些数字，
+
+1004
+00:47:13,000 --> 00:47:15,100
+these parameters inside of the neural network
+神经网络内部的这些参数
+
+1005
+00:47:15,100 --> 00:47:18,220
+that just give us the answer we want based on all of this data?
+这些参数只是根据所有这些数据给我们想要的答案？
+
+1006
+00:47:18,220 --> 00:47:22,180
+More generally though, this would be really representative of deep learning.
+更普遍地说，这将非常代表深度学习。
+
+1007
+00:47:22,180 --> 00:47:24,490
+It's not as simple as input, input, output.
+它并不像输入、输入、输出那样简单。
+
+1008
+00:47:24,490 --> 00:47:27,140
+There's actually a lot of these nodes, these neurons.
+实际上有很多这些节点，这些神经元。
+
+1009
+00:47:27,140 --> 00:47:28,360
+There's a lot of these edges.
+有很多这些边。
+
+1010
+00:47:28,360 --> 00:47:30,812
+There's a lot of numbers and math are going on that,
+有很多数字和数学运算正在进行，
+
+1011
+00:47:30,812 --> 00:47:33,520
+frankly, even the computer scientists using these neural networks
+坦率地说，即使是使用这些神经网络的计算机科学家
+
+1012
+00:47:33,520 --> 00:47:36,760
+don't necessarily know what they even mean or represent.
+也不一定知道它们到底意味着什么或代表什么。
+
+1013
+00:47:36,760 --> 00:47:39,910
+It just happens to be that when you crunch the numbers with all
+只是碰巧的是，当你在所有
+
+1014
+00:47:39,910 --> 00:47:44,140
+of these parameters in place, you get the answer that you want,
+这些参数到位后，你得到了你想要的答案，
+
+1015
+00:47:44,140 --> 00:47:46,190
+at least most of the time.
+至少在大多数情况下是这样。
+
+1016
+00:47:46,190 --> 00:47:48,280
+So that's essentially the intuition behind that.
+所以，这基本上是背后的直觉。
+
+1017
+00:47:48,280 --> 00:47:51,340
+And you can apply it to very real world, if mundane applications.
+你可以将其应用于非常真实的，如果平凡的应用。
+
+1018
+00:47:51,340 --> 00:47:55,000
+Given today's humidity, given today's pressure, yes or no,
+考虑到今天湿度，考虑到今天的气压，是或否，
+
+1019
+00:47:55,000 --> 00:47:56,275
+should there be rainfall?
+应该下雨吗？
+
+1020
+00:47:56,275 --> 00:47:58,150
+And maybe there is some mathematical function
+也许有一些数学函数
+
+1021
+00:47:58,150 --> 00:48:01,120
+that based on years of training data, we can
+根据多年的训练数据，我们可以
+
+1022
+00:48:01,120 --> 00:48:03,490
+infer what that prediction should be.
+推断出那个预测应该是什么。
+
+1023
+00:48:03,490 --> 00:48:04,090
+Another one.
+另一个。
+
+1024
+00:48:04,090 --> 00:48:07,120
+Given this amount of advertising in this month,
+考虑到本月的广告量，
+
+1025
+00:48:07,120 --> 00:48:09,480
+what should our sales be for that year?
+我们今年的销量应该是什么？
+
+1026
+00:48:09,480 --> 00:48:11,230
+Should they be up, or should they be down?
+它们应该上升，还是应该下降？
+
+1027
+00:48:11,230 --> 00:48:13,130
+Sorry, for that particular month.
+抱歉，是针对那个特定月份。
+
+1028
+00:48:13,130 --> 00:48:16,090
+So real world problems map readily when you can break them down
+所以，当你能将现实世界的问题分解成
+
+1029
+00:48:16,090 --> 00:48:20,320
+into inputs and a binary output often, or some kind of output
+输入和二元输出时，它们很容易映射，或者某种输出
+
+1030
+00:48:20,320 --> 00:48:24,250
+where you want the thing to figure out based on past data what
+你想让它根据过去的数据找出
+
+1031
+00:48:24,250 --> 00:48:26,650
+its prediction should be.
+它的预测应该是什么。
+
+1032
+00:48:26,650 --> 00:48:30,250
+So that brings us back to generative artificial intelligence, which
+所以，这将我们带回到生成式人工智能，它
+
+1033
+00:48:30,250 --> 00:48:34,760
+isn't just about solving problems, but really generating literally images,
+这不仅仅是关于解决问题，而是真正地生成文字、图像，甚至是视频，这些内容越来越像
+
+1034
+00:48:34,760 --> 00:48:38,680
+texts, even videos, that again, increasingly resemble
+我们人类可能会输出的内容。
+
+1035
+00:48:38,680 --> 00:48:41,920
+what we humans might otherwise output ourselves.
+在生成式人工智能领域，
+
+1036
+00:48:41,920 --> 00:48:45,370
+And within the world of generative artificial intelligence,
+我们当然有之前见过的图像，
+
+1037
+00:48:45,370 --> 00:48:48,310
+do we have, of course, these same images that we saw before,
+之前见过的文字，更一般地，还有像
+
+1038
+00:48:48,310 --> 00:48:51,340
+the same text that we saw before, and more generally, things
+ChatGPT这样的大语言模型。
+
+1039
+00:48:51,340 --> 00:48:55,870
+like ChatGPT, which are really examples of what we now call large language
+这些都是巨大的神经网络，
+
+1040
+00:48:55,870 --> 00:48:56,560
+models.
+它们有大量的输入和神经元，
+
+1041
+00:48:56,560 --> 00:48:59,020
+These sort of massive neural networks that
+在软件中得以实现，本质上代表着软件通过大量输入所发现的所有模式。
+
+1042
+00:48:59,020 --> 00:49:02,590
+have so many inputs and so many neurons implemented
+想想互联网上的所有文本内容。
+
+1043
+00:49:02,590 --> 00:49:06,280
+in software, that essentially represent all of the patterns
+想想像CS50这样的课程，它们很可能存在于互联网上。
+
+1044
+00:49:06,280 --> 00:49:09,850
+that the software has discovered by being fed massive amounts of input.
+即使这些 AI、这些大型语言模型
+
+1045
+00:49:09,850 --> 00:49:13,180
+Think of it as like the entire textual content of the internet.
+没有被告知如何行为，它们实际上是
+
+1046
+00:49:13,180 --> 00:49:16,180
+Think of it as the entire content of courses like CS50
+从所有这些例子中推断出，无论好坏，如何做出预测。
+
+1047
+00:49:16,180 --> 00:49:18,280
+that may very well be out there on the internet.
+例如，从 2017 年开始，仅仅几年之前，
+
+1048
+00:49:18,280 --> 00:49:21,610
+And even though these AIs, these large language models
+Google 发布了一篇开创性的论文，介绍了我们现在所知的 Transformer 架构。
+
+1049
+00:49:21,610 --> 00:49:25,240
+haven't been told how to behave, they're really
+它引入了注意力值的思想，
+
+1050
+00:49:25,240 --> 00:49:28,210
+inferring from all of these examples, for better
+提出的是，给定一个英语句子，或者说任何人类句子，
+
+1051
+00:49:28,210 --> 00:49:31,310
+or for worse, how to make predictions.
+你试图给每个词，每个输入分配一个数字，
+
+1052
+00:49:31,310 --> 00:49:34,840
+So here, for instance, from 2017, just a few years back,
+就像我们之前练习过的，来表示它与其他词的关系。
+
+1053
+00:49:34,840 --> 00:49:38,110
+is a seminal paper from Google that introduced what we now
+所以，如果两个词在一个句子中具有很高的关系，
+
+1054
+00:49:38,110 --> 00:49:40,210
+know as a transformer architecture.
+它们将具有很高的注意力值。
+
+1055
+00:49:40,210 --> 00:49:43,690
+And this introduced this idea of attention values, whereby
+而如果可能是一个介词或冠词，比如“the”或“a”，
+
+1056
+00:49:43,690 --> 00:49:46,900
+they propose that given an English sentence, for instance, or really
+那么它们的注意力值可能更低。
+
+1057
+00:49:46,900 --> 00:49:51,460
+any human sentence, you try to assign numbers, not unlike our past exercises,
+通过以这种方式对世界进行编码，
+
+1058
+00:49:51,460 --> 00:49:55,780
+to each of the words, each of the inputs that speaks to its relationship
+我们开始检测模式，这些模式可以让我们预测像单词这样的东西，
+
+1059
+00:49:55,780 --> 00:49:56,930
+with other words.
+也就是说，生成文本。
+
+1060
+00:49:56,930 --> 00:49:59,720
+So if there's a high relationship between two words in a sentence,
+例如，直到几年前，完成这个句子
+
+1061
+00:49:59,720 --> 00:50:01,310
+they would have high attention values.
+对很多 AI 来说实际上非常困难。
+
+1062
+00:50:01,310 --> 00:50:04,720
+And if maybe it's a preposition or an article, like the or the like,
+例如，马萨诸塞州是美国东北部新英格兰地区的一个州。
+
+1063
+00:50:04,720 --> 00:50:06,890
+maybe those attention values are lower.
+它东临大西洋。
+
+1064
+00:50:06,890 --> 00:50:09,070
+And by encoding the world in that way, do
+该州的首府是......
+
+1065
+00:50:09,070 --> 00:50:14,230
+we begin to detect patterns that allow us to predict things like words,
+现在，你应该认为这相对简单。
+
+1066
+00:50:14,230 --> 00:50:15,440
+that is, generate text.
+就像给你一个简单的球类问题。
+
+1067
+00:50:15,440 --> 00:50:19,150
+So for instance, up until a few years ago, completing this sentence
+但从历史上看，在 AI 的世界里，这个词，“州”，
+
+1068
+00:50:19,150 --> 00:50:21,310
+was actually pretty hard for a lot of AI.
+与它所指代的专有名词相比，
+
+1069
+00:50:21,310 --> 00:50:25,180
+So for instance here, Massachusetts is a state in the New England region
+实际上离得非常远，以至于我们...
+
+1070
+00:50:25,180 --> 00:50:26,860
+of the Northeastern United States.
+
+
+1071
+00:50:26,860 --> 00:50:29,500
+It borders on the Atlantic Ocean to the east.
+
+
+1072
+00:50:29,500 --> 00:50:32,180
+The state's capital is dot, dot, dot.
+
+
+1073
+00:50:32,180 --> 00:50:34,910
+Now, you should think that this is relatively straightforward.
+
+
+1074
+00:50:34,910 --> 00:50:37,480
+It's like just handing you a softball type question.
+
+
+1075
+00:50:37,480 --> 00:50:41,290
+But historically within the world of AI, this word, state,
+
+
+1076
+00:50:41,290 --> 00:50:44,907
+was so relatively far away from the proper noun
+
+
+1077
+00:50:44,907 --> 00:50:46,990
+that it's actually referring back to, that we just
+
+
+1078
+00:50:46,990 --> 00:50:50,170
+didn't have computational models that took in that holistic picture,
+没有计算模型能全面地考虑这个问题，
+
+1079
+00:50:50,170 --> 00:50:52,702
+that frankly, we humans are much better at.
+坦白说，我们人类在这方面要擅长得多。
+
+1080
+00:50:52,702 --> 00:50:54,910
+If you would ask this question a little more quickly,
+如果你能稍微快一点地问这个问题，
+
+1081
+00:50:54,910 --> 00:50:57,260
+a little more immediately, you might have gotten a better response.
+更直接一点，你可能会得到更好的回应。
+
+1082
+00:50:57,260 --> 00:50:59,610
+But this is, daresay, why chatbots in the past been
+但这就是，敢说，为什么过去聊天机器人
+
+1083
+00:50:59,610 --> 00:51:01,945
+so bad in the form of customer service and the like,
+在客服等方面表现得那么糟糕，
+
+1084
+00:51:01,945 --> 00:51:04,320
+because they're not really taking all of the context into
+因为它们并没有真正将所有上下文
+
+1085
+00:51:04,320 --> 00:51:07,470
+account that we humans might be inclined to provide.
+考虑进去，而这些是人类可能会提供的。
+
+1086
+00:51:07,470 --> 00:51:09,750
+What's going on underneath the hood?
+引擎盖下面在发生什么？
+
+1087
+00:51:09,750 --> 00:51:14,220
+Without escalating things too quickly, what an artificial intelligence
+不用太快地升级事情，现在的 AI
+
+1088
+00:51:14,220 --> 00:51:16,650
+nowadays, these large language models might do,
+这些大型语言模型可能会做，
+
+1089
+00:51:16,650 --> 00:51:21,360
+is break down the user's input, your input into ChatGPT
+是将用户的输入，你对 ChatGPT 的输入
+
+1090
+00:51:21,360 --> 00:51:22,950
+into the individual words.
+分解成单个单词。
+
+1091
+00:51:22,950 --> 00:51:26,790
+We might then encode, we might then take into account the order of those words.
+然后我们可能会对这些词进行编码，我们可能会考虑这些词的顺序。
+
+1092
+00:51:26,790 --> 00:51:29,400
+Massachusetts is first, is is last.
+“Massachusetts” 在前，“is” 在后。
+
+1093
+00:51:29,400 --> 00:51:33,050
+We might further encode each of those words using a standard way.
+我们可能会进一步使用标准方法对每个词进行编码。
+
+1094
+00:51:33,050 --> 00:51:34,800
+And there's different algorithms for this,
+有不同的算法可以做到这一点，
+
+1095
+00:51:34,800 --> 00:51:37,050
+but you come up with what are called embeddings.
+但你最终会得到所谓的嵌入。
+
+1096
+00:51:37,050 --> 00:51:40,170
+That is to say, you can use one of those APIs
+也就是说，你可以使用之前提到的 API 中的一个，
+
+1097
+00:51:40,170 --> 00:51:43,500
+I talked about earlier, or even software running on your own computers,
+或者甚至运行在你自己的电脑上的软件，
+
+1098
+00:51:43,500 --> 00:51:46,140
+to come up with a mathematical representation
+来得到一个单词 “Massachusetts” 的数学表示。
+
+1099
+00:51:46,140 --> 00:51:47,940
+of the word, Massachusetts.
+它是一个数学表示。
+
+1100
+00:51:47,940 --> 00:51:50,190
+And Rongxin kindly did this for us last night.
+荣信昨晚好心地为我们做到了这一点。
+
+1101
+00:51:50,190 --> 00:51:57,000
+This is the 1,536 floating point values that OpenAI uses
+这是 OpenAI 用于表示单词 “Massachusetts” 的 1536 个浮点数。
+
+1102
+00:51:57,000 --> 00:51:59,880
+to represent the word, Massachusetts.
+这是对“Massachusetts”的数学表示。
+
+1103
+00:51:59,880 --> 00:52:02,010
+And this is to say, and you should not understand
+也就是说，你不应该理解
+
+1104
+00:52:02,010 --> 00:52:04,380
+anything you are looking at on the screen, nor do I,
+你在屏幕上看到的任何东西，我也不懂，
+
+1105
+00:52:04,380 --> 00:52:07,170
+but this is now a mathematical representation
+但这现在是一个数学表示
+
+1106
+00:52:07,170 --> 00:52:10,320
+of the input that can be compared against
+输入内容，可以与
+
+1107
+00:52:10,320 --> 00:52:12,660
+the mathematical representations of other inputs
+其他输入的数学表示进行比较
+
+1108
+00:52:12,660 --> 00:52:15,420
+in order to find proximity semantically.
+以找到语义上的接近程度。
+
+1109
+00:52:15,420 --> 00:52:20,130
+Words that somehow have relationships or correlations with each other
+彼此之间有某种关系或关联的词语
+
+1110
+00:52:20,130 --> 00:52:22,890
+that helps the AI ultimately predict what
+最终帮助 AI 预测下一个词应该是
+
+1111
+00:52:22,890 --> 00:52:25,990
+should the next word out of its mouth be, so to speak.
+什么，可以这么说。
+
+1112
+00:52:25,990 --> 00:52:28,380
+So in a case like, these values represent--
+所以，在这种情况下，这些值代表着——
+
+1113
+00:52:28,380 --> 00:52:30,630
+these lines represent all of those attention values.
+这些线条代表所有这些注意值。
+
+1114
+00:52:30,630 --> 00:52:32,880
+And thicker lines means there's more attention given
+线条越粗，表示对这个词的关注度越高。
+
+1115
+00:52:32,880 --> 00:52:34,140
+from one word to another.
+从一个词到另一个词。
+
+1116
+00:52:34,140 --> 00:52:35,730
+Thinner lines mean the opposite.
+线条越细，表示关注度越低。
+
+1117
+00:52:35,730 --> 00:52:40,770
+And those inputs are ultimately fed into a large neural network,
+这些输入最终被输入到一个大型神经网络中，
+
+1118
+00:52:40,770 --> 00:52:43,870
+where you have inputs on the left, outputs on the right.
+左边是输入，右边是输出。
+
+1119
+00:52:43,870 --> 00:52:46,380
+And in this particular case, the hope is to get out
+在这种情况下，希望得到
+
+1120
+00:52:46,380 --> 00:52:52,200
+a single word, which is the capital of Boston itself, whereby somehow,
+一个单词，也就是波士顿本身的首都，通过某种方式，
+
+1121
+00:52:52,200 --> 00:52:55,950
+the neural network and the humans behind it at OpenAI, Microsoft, Google,
+神经网络以及 OpenAI、微软、谷歌等背后的研究人员，
+
+1122
+00:52:55,950 --> 00:52:59,490
+or elsewhere, have sort of crunched so many numbers by training
+以及其他机构的研究人员，通过在大量数据上训练
+
+1123
+00:52:59,490 --> 00:53:03,040
+these models on so much data, that it figured out what all of those weights
+这些模型，最终弄清楚了这些权重。
+
+1124
+00:53:03,040 --> 00:53:06,670
+are, what the biases are, so as to influence mathematically
+是，哪些是偏差，以便从数学上影响
+
+1125
+00:53:06,670 --> 00:53:08,710
+the output therefrom.
+由此产生的输出。
+
+1126
+00:53:08,710 --> 00:53:13,270
+So that is all underneath the hood of what students now
+所以，所有这些都在学生现在所理解的
+
+1127
+00:53:13,270 --> 00:53:15,460
+perceive as this adorable rubber duck.
+这可爱的橡胶鸭子的引擎盖下。
+
+1128
+00:53:15,460 --> 00:53:20,150
+But underneath it all is certainly a lot of domain knowledge.
+但在这一切之下，当然有很多领域知识。
+
+1129
+00:53:20,150 --> 00:53:23,570
+And CS50, by nature of being OpenCourseWare for the past many years,
+而 CS50，由于在过去几年中一直是开放课程软件，
+
+1130
+00:53:23,570 --> 00:53:26,050
+CS50 is fortunate to actually be part of the model,
+CS50 很幸运地成为模型的一部分，
+
+1131
+00:53:26,050 --> 00:53:28,880
+as might be any other content that's freely available online.
+就像任何其他可在网上免费获得的内容一样。
+
+1132
+00:53:28,880 --> 00:53:31,570
+And so that certainly helps benefit the answers
+所以这当然有助于回答
+
+1133
+00:53:31,570 --> 00:53:34,150
+when it comes to asking CS50 specific questions.
+关于 CS50 特定问题的询问。
+
+1134
+00:53:34,150 --> 00:53:36,403
+That said, it's not perfect.
+也就是说，它并不完美。
+
+1135
+00:53:36,403 --> 00:53:38,320
+And you might have heard of what are currently
+你可能听说过目前
+
+1136
+00:53:38,320 --> 00:53:43,540
+called hallucinations, where ChatGPT and similar tools just make stuff up.
+被称为幻觉的东西，ChatGPT 和类似的工具只是编造了一些东西。
+
+1137
+00:53:43,540 --> 00:53:45,340
+And it sounds very confident.
+而且它听起来非常自信。
+
+1138
+00:53:45,340 --> 00:53:47,673
+And you can sometimes call on it, whereby
+有时你可以调用它，从而
+
+1139
+00:53:47,673 --> 00:53:49,090
+you can say, no, that's not right.
+你可以说，不，那是不对的。
+
+1140
+00:53:49,090 --> 00:53:51,610
+And it will playfully apologize and say, oh, I'm sorry.
+它会俏皮地道歉说，哦，对不起。
+
+1141
+00:53:51,610 --> 00:53:56,560
+But it made up some statement, because it was probabilistically
+但它编造了一些说法，因为它在概率上
+
+1142
+00:53:56,560 --> 00:53:59,840
+something that could be said, even if it's just not correct.
+是可能说出来的，即使它只是不正确。
+
+1143
+00:53:59,840 --> 00:54:02,650
+Now, allow me to propose that this kind of problem
+现在，请允许我提出，这种问题
+
+1144
+00:54:02,650 --> 00:54:05,230
+is going to get less and less frequent.
+将变得越来越少。
+
+1145
+00:54:05,230 --> 00:54:07,480
+And so as the models evolve and our techniques evolve,
+随着模型的演变和我们技术的演变，
+
+1146
+00:54:07,480 --> 00:54:08,983
+this will be less of an issue.
+这将不再是一个问题。
+
+1147
+00:54:08,983 --> 00:54:10,900
+But I thought it would be fun to end on a note
+但我认为用一个音符结束会很有趣
+
+1148
+00:54:10,900 --> 00:54:13,510
+that a former colleague shared just the other day, which
+前几天一位同事分享的，它
+
+1149
+00:54:13,510 --> 00:54:16,780
+was this old poem by Shel Silverstein, another something
+是一首谢尔·西尔弗斯坦的旧诗，另一个东西
+
+1150
+00:54:16,780 --> 00:54:18,580
+from our past childhood perhaps.
+也许是我们过去的童年。
+
+1151
+00:54:18,580 --> 00:54:23,800
+And this was from 1981, a poem called "Homework Machine," which is perhaps
+这是 1981 年的作品，一首名为“作业机器”的诗，它也许
+
+1152
+00:54:23,800 --> 00:54:26,980
+foretold where we are now in 2023.
+预示了我们现在在 2023 年的位置。
+
+1153
+00:54:26,980 --> 00:54:30,940
+"The homework machine, oh, the homework machine, most perfect contraption
+“作业机器，哦，作业机器，最完美的机器
+
+1154
+00:54:30,940 --> 00:54:32,320
+that's ever been seen.
+有史以来见过的。
+
+1155
+00:54:32,320 --> 00:54:35,770
+Just put in your homework, then drop in a dime, snap on the switch,
+只需把你的作业放进去，然后投入一角钱，打开开关，
+
+1156
+00:54:35,770 --> 00:54:41,380
+and in ten seconds time, your homework comes out quick and clean as can be.
+十秒钟后，你的作业就会干净利落地出来。
+
+1157
+00:54:41,380 --> 00:54:46,240
+Here it is, 9 plus 4, and the answer is 3.
+它在这，9 加 4，答案是 3。
+
+1158
+00:54:46,240 --> 00:54:47,590
+3?
+3？
+
+1159
+00:54:47,590 --> 00:54:48,820
+Oh, me.
+哦，我。
+
+1160
+00:54:48,820 --> 00:54:52,210
+I guess it's not as perfect as I thought it would be."
+我想它不像我想象的那么完美。”
+
+1161
+00:54:52,210 --> 00:54:55,330
+So, quite foretelling, sure.
+所以，相当预言，当然。
+
+1162
+00:54:55,330 --> 00:54:58,220
+[APPLAUSE]
+[掌声]
+
+1163
+00:54:58,220 --> 00:55:01,130
+Quite foretelling, indeed.
+的确很有预言性。
+
+1164
+00:55:01,130 --> 00:55:04,910
+Though, if for all this and more, the family members in the audience
+不过，如果为了这一切和更多，观众中的家庭成员
+
+1165
+00:55:04,910 --> 00:55:08,810
+are welcome to take CS50 yourself online at cs50edx.org.
+欢迎您在 cs50edx.org 上在线学习 CS50。
+
+1166
+00:55:08,810 --> 00:55:10,700
+For all of today and so much more, allow me
+为了今天的一切和更多，请允许我
+
+1167
+00:55:10,700 --> 00:55:15,140
+to thank Brian, Rongxin, Sophie, Andrew, Patrick, Charlie, CS50's whole team.
+感谢 Brian、Rongxin、Sophie、Andrew、Patrick、Charlie 和 CS50 的整个团队。
+
+1168
+00:55:15,140 --> 00:55:18,920
+If you are a family member here headed to lunch with CS50's team,
+如果您是这里和 CS50 团队共进午餐的家庭成员，
+
+1169
+00:55:18,920 --> 00:55:22,190
+please look for Cameron holding a rubber duck above her head.
+请寻找 Cameron，她头顶上拿着一个橡胶鸭。
+
+1170
+00:55:22,190 --> 00:55:24,300
+Thank you so much for joining us today.
+非常感谢您今天加入我们。
+
+1171
+00:55:24,300 --> 00:55:25,670
+This was CS50.
+这是 CS50。
+
+1172
+00:55:25,670 --> 00:55:27,170
+[APPLAUSE]
+鼓掌
+
+1173
+00:55:27,170 --> 00:55:30,520
+[MUSIC PLAYING]
+音乐播放
