@@ -33,7 +33,7 @@ if __name__ == "__main__":
     prompt_path = r".\prompt\prompt.txt"
     with open("api.key", 'r', encoding='utf-8') as file:
         api = file.readline()
-    base_path = r".\subtitle"
+    base_path = r".\subtitle\CS50X\initial"  # 基本路径
 
     # 遍历基本路径下的所有文件夹
     for folder_name in os.listdir(base_path):

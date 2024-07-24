@@ -109,9 +109,9 @@ def retranslate(srt_path, srt_translated_path, api, prompt_ask, srt_number):
                 file1.write(respond+'\n\n')
                 file1.seek(0)
                 srt_format('temp.srt')
-                respond_format = file1.read()
+                respond_format = file1.read() + '\n'
             os.remove('temp.srt')
-            srt_tanslate.insert(missing_subtitle[0]*5, respond_format)
+            srt_tanslate.insert((missing_subtitle[0] - 1)*5, respond_format)
             with open(srt_translated_path, 'w', encoding='utf-8') as file:
                 file.writelines([str(line) for line in srt_tanslate])
             return 1

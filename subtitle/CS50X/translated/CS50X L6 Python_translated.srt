@@ -1406,49 +1406,47 @@ But let me go ahead and propose this instead.
 282
 00:14:14,940 --> 00:14:17,540
 Let me create a file called blur.py.
+让我创建一个名为 blur.py 的文件。
 
+283
+00:14:17,540 --> 00:14:23,840
+And in this file, let me go ahead and just go ahead and import a library.
+在这个文件中，让我继续前进，并导入一个库。
+
+284
+00:14:23,840 --> 00:14:27,950
+So from the Python image library, PIL, let me go ahead
+所以从 Python 图像库 PIL 开始，让我继续
 
 285
 00:14:27,950 --> 00:14:31,790
 and import something called Image, capital I, and Image Filter, capital
 导入名为 Image 的内容，大写 I，以及 Image Filter，大写
 
-283
-00:14:17,540 --> 00:14:23,840
-And in this file, let me go ahead and just go ahead and import a library.
-在这个文件中，我将导入一个库。
-
-284
-00:14:23,840 --> 00:14:27,950
-So from the Python image library, PIL, let me go ahead
-所以从 Python 图像库 PIL，让我继续
-288
-00:14:38,480 --> 00:14:41,300
-Then let me go ahead and create another variable called after
-然后让我继续创建一个名为after的另一个变量
-
-289
 286
 00:14:31,790 --> 00:14:32,810
 I, capital F.
-我，大写 F。
+我，大写的 F。
 
 287
 00:14:32,810 --> 00:14:35,570
 So I'm going to do before = Image.open("bridge.bmp").
-所以我要做的是，在 Image.open("bridge.bmp") 之前。
-00:14:41,300 --> 00:14:46,220
-and set that equal to before.filter, and then, in parentheses,
-并将其设置为before.filter，然后，在括号中，
+所以我要在之前做 = Image.open("bridge.bmp")。
 
-290
-00:14:46,220 --> 00:14:50,328
+288
+00:14:38,480 --> 00:14:41,300
+Then let me go ahead and create another variable called after
+然后，我将创建一个名为“after”的变量
+
 289
 00:14:41,300 --> 00:14:46,220
 and set that equal to before.filter, and then, in parentheses,
-并将它设置为 before.filter 等于，然后，在括号中，
+并将其设置为等于“before.filter”，然后，在括号内
+
+290
+00:14:46,220 --> 00:14:50,328
 ImageFilter, spelled as before, dot BoxBlur,
-ImageFilter，拼写方式如前所述，点 BoxBlur，
+是“ImageFilter”，拼写与之前相同，然后是“dot BoxBlur”
 
 291
 00:14:50,328 --> 00:14:51,870
