@@ -1,6 +1,3 @@
-标题 CS50X L0 Scratch 2024 中英双语字幕
-链接https://www.youtube.com/watch?v=3LPJfIKxwWc&list=PLhQjrBD2T381WAHyx1pq-sBfykqMBI7V4
-中英双语字幕
-基于Google Gmini Flash翻译，并具有一定上下文
-若有贡献想法，见：
+learn learn! heart heart!
 Github仓库：github.com/TecReaGroup/cs-subtitle
+qq群: 700328548

@@ -6,6 +6,8 @@
 
 更多想要翻译的系列, 可以提 issue, 需要提供视频地址以及简要概括其内容和特点
 
+- [CS50X](https://www.bilibili.com/video/BV1tYeBeeEk4/?share_source=copy_web&vd_source=34e7d6e2081c3f2ce5f5123116b3beaf)
+
 ## 前言
 
 ### 介绍
@@ -60,7 +62,7 @@ prompt 示例：
 
 > 由于大型语言模型输出的不稳定性, `translate.py` 中的 `retranslate` 函数尝试翻译丢失的文本。但它不能保证没有错误。
 
-### 第三：合并（开发中）
+### 第三：合并
 
 可选：如果你不需要硬字幕，请跳过这一步。
 
@@ -75,9 +77,9 @@ prompt 示例：
 
 在此之前，你需要确保环境中的配置正确。
 
-- [Whisper](https://github.com/openai/whisper), [Pytorch](https://pytorch.org/)。
+- [Whisper](https://github.com/openai/whisper), [Pytorch](https://pytorch.org/)。(如果需要提取字幕)
 - [Gemini api](https://ai.google.dev/gemini-api/)
-- [Ffmpeg](https://ffmpeg.org/)
+- [Ffmpeg](https://ffmpeg.org/) (如果需要生成内嵌字幕)
 - Python 依赖库：查看代码，并安装所需的库。
 
 ## 字幕审查
@@ -110,7 +112,7 @@ prompt 示例：
 
 [初始视频](https://www.youtube.com/watch?v=3LPJfIKxwWc&list=PLhQjrBD2T381WAHyx1pq-sBfykqMBI7V4)
 
-[带字幕的视频](https://www.bilibili.com/video/BV1qyhwezEyK/?spm_id_from=333.999.0.0)
+[带字幕的视频](https://www.bilibili.com/video/BV1tYeBeeEk4/?share_source=copy_web&vd_source=34e7d6e2081c3f2ce5f5123116b3beaf)
 
 ### 联系
 

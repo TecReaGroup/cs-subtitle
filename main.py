@@ -1,47 +1,62 @@
 import os
+import shutil
 from tqdm import tqdm
 from library import translate
+from library import merge
 
 
-# 定义一个函数来查找具有特定后缀的文件
-def find_files(path, suffix):
-    found_files = []  # 修改变量名以避免冲突
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            if file.endswith('.' + suffix):
-                found_files.append(os.path.abspath(os.path.join(root, file)))
-    return found_files
+# translate
+def translate_subtitles(subtitle_initial_path, subtitle_translated_path, api, prompt_path):
+    with open(subtitle_initial_path, 'r', encoding='utf-8') as file:
+        srt_number = len(file.readlines()) // 4  # 估算字幕数量
+    translate.main(subtitle_initial_path, subtitle_translated_path, api, prompt_path, srt_number)  # 调用翻译函数
 
 
-# 定义一个函数来翻译文件夹中的字幕文件
-def translate_subtitles_in_folder(initial_folder_path, translated_folder_path,
-                                  api, prompt_path):
-    srt_files = find_files(initial_folder_path, suffix='srt')
-    for file in tqdm(srt_files):  # 使用tqdm显示进度条
-        srt_name = file.split('\\')[-1][:-4]  # 获取不带扩展名的文件名
-        path_srt_file = file
-        path_srt_translated_file = os.path.join(translated_folder_path,
-                                                f"{srt_name}_translated.srt")
-        with open(path_srt_file, 'r', encoding='utf-8') as file:
-            srt_number = len(file.readlines()) // 4  # 估算字幕数量
+# merge
+def merge_subtitle(video_initial_path, subtitle_translated_folder_path, subtitle_translated_path):
+    video_name = video_initial_path.split("\\")[-1]
+    video_tanslated_name = video_initial_path.split("\\")[-1][:-4] + "_2024_中英双语字幕.mp4"
+    subtitle_name = subtitle_translated_path.split("\\")[-1]
 
-        translate.main(path_srt_file, path_srt_translated_file,
-                       api, prompt_path, srt_number)  # 调用翻译函数
+    # copy files to current folder then use ffmpeg to merge
+    shutil.copy(video_initial_path, ".\\")
+    shutil.copy(subtitle_translated_path, ".\\")
+    merge.main(video_name, video_tanslated_name, subtitle_name)
+    
+    # move files to target folder then delete files in current folder
+    shutil.move(video_tanslated_name, subtitle_translated_folder_path)
+    os.remove(video_name)
+    os.remove(subtitle_name)
 
 
 if __name__ == "__main__":
+    base_path = r".\subtitle\CS50X"  # 基本路径
     prompt_path = r".\prompt\prompt.txt"
     with open("api.key", 'r', encoding='utf-8') as file:
         api = file.readline()
-    base_path = r".\subtitle\CS50X\initial"  # 基本路径
 
-    # 遍历基本路径下的所有文件夹
-    for folder_name in os.listdir(base_path):
-        folder_path = os.path.join(base_path, folder_name)
-        if os.path.isdir(folder_path):
-            initial_folder_path = folder_path
-            translated_folder_path = os.path.join(folder_path, "translated")
-            os.makedirs(translated_folder_path, exist_ok=True)  # 创建翻译文件夹
-            translate_subtitles_in_folder(initial_folder_path,
-                                          translated_folder_path,
-                                          api, prompt_path)
+    video_initial_folder_path = base_path + "\\video_initial"
+    video_translated_folder_path = base_path + "\\video_translated"
+    subtitle_initial_folder_path = base_path + "\\subtitle_initial"
+    subtitle_translated_folder_path = base_path + "\\subtitle_translated"
+    os.makedirs(video_initial_folder_path, exist_ok=True)
+    os.makedirs(video_translated_folder_path, exist_ok=True)
+    os.makedirs(subtitle_initial_folder_path, exist_ok=True)
+    os.makedirs(subtitle_translated_folder_path, exist_ok=True)
+
+    video_files = os.listdir(video_initial_folder_path)
+    for video_file in tqdm(video_files, desc="Processing videos"):
+        video_name = video_file[:-4]
+        # extract pass
+
+        # translate
+        subtitle_initial_path = subtitle_initial_folder_path + "\\" + video_name + ".srt"
+        subtitle_translated_path = subtitle_translated_folder_path + "\\" + video_name + "_translated.srt"
+        if not os.path.exists(subtitle_translated_path):
+            translate_subtitles(subtitle_initial_path, subtitle_translated_path, api, prompt_path)
+
+        # merge
+        video_initial_path = video_initial_folder_path + "\\" + video_file
+        video_translated_path = video_translated_folder_path + "\\" + video_name + "_2024_中英双语字幕.mp4"
+        if not os.path.exists(video_translated_path):
+            merge_subtitle(video_initial_path, video_translated_folder_path, subtitle_translated_path)

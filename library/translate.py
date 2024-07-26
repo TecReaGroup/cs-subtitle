@@ -102,7 +102,7 @@ def retranslate(srt_path, srt_translated_path, api, prompt_ask, srt_number):
             missing_txt = read_lines_range(srt_path, missing_subtitle[0],
                                            missing_subtitle[1])
             prompt = prompt_ask + "\n" + missing_txt
-            print(prompt + "\n" + "<< retanslating")
+            print(prompt + "\n" + "<< retanslating\n" + srt_path)
 
             respond = tanslate(prompt, api)
             with open('temp.srt', 'a+', encoding='utf-8') as file1:
@@ -154,7 +154,7 @@ def main(srt_path, srt_translated_path, api, prompt_path, srt_number):
             if srt_split == "":
                 continue
             prompt = prompt_ask + "\n" + srt_split
-            print(prompt + "\n" + "<< translating")
+            print(prompt + "\n" + "<< translating\n" + srt_path)
             respond = tanslate(prompt, api)
             file2.write(respond + "\n")
             srt_split = ""

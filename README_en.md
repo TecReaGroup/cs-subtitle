@@ -107,7 +107,7 @@ Script needed: ![script.png](./photo/script.png)
 
 [Initial video](https://www.youtube.com/watch?v=3LPJfIKxwWc&list=PLhQjrBD2T381WAHyx1pq-sBfykqMBI7V4)
 
-[Subtitled video](https://www.bilibili.com/video/BV1qyhwezEyK/?spm_id_from=333.999.0.0)
+[Subtitled video](https://www.bilibili.com/video/BV1tYeBeeEk4/?share_source=copy_web&vd_source=34e7d6e2081c3f2ce5f5123116b3beaf)
 
 ### Contact
 
